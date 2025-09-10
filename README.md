@@ -118,4 +118,4 @@
 ##for backend the api documentation file is added in the backend folder for the endpoint required for integration in frontend.
 
 
-👉 http://localhost:5173
+http://localhost:5173
