@@ -1,0 +1,22 @@
+.watch-page {
+    display: flex;
+    gap: 20px;
+}
+
+.watch-main {
+    flex: 3;
+}
+
+.watch-sidebar {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.video-player {
+    margin-bottom: 12px;
+}
+
+.channel {
+    color: #606060;
+    font-size: 14px;
+}
