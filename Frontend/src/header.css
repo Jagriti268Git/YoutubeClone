@@ -1,0 +1,405 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+
+/* =======================
+   Header Layout
+======================= */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 16px;
+    border-bottom: 1px solid #ddd;
+    background: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 56px;
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+
+/* =======================
+   Left Section
+======================= */
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.menu-icon {
+    font-size: 20px;
+    cursor: pointer;
+    color: #606060;
+}
+
+.yt-logo {
+    height: 30px;
+    cursor: pointer;
+}
+
+
+/* =======================
+   Center Section (Search)
+======================= */
+
+.header-center {
+    flex: 1;
+    max-width: 600px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    max-width: 600px;
+}
+
+
+/* Input field */
+
+.search-input-wrapper {
+    flex: 1;
+    position: relative;
+    display: flex;
+}
+
+.search-input-wrapper input {
+    width: 100%;
+    height: 36px;
+    padding: 0 36px 0 12px;
+    border: 1px solid #ccc;
+    border-right: none;
+    border-radius: 40px 0 0 40px;
+    outline: none;
+    font-size: 14px;
+}
+
+
+/* Clear (X) icon */
+
+.clear-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 16px;
+    color: #555;
+}
+
+
+/* Search button */
+
+.search-btn {
+    width: 64px;
+    height: 38px;
+    border: 1px solid #ccc;
+    border-radius: 0 40px 40px 0;
+    background: #f8f8f8;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-btn svg {
+    font-size: 16px;
+    color: #333;
+}
+
+.search-btn:hover {
+    background: #f0f0f0;
+}
+
+
+/* Mic button */
+
+.mic-btn {
+    margin-left: 10px;
+    background: #f8f8f8;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.mic-btn:hover {
+    background: #e5e5e5;
+}
+
+
+/* Suggestions dropdown */
+
+.suggestions {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    right: 64px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-top: none;
+    z-index: 2000;
+    max-height: 300px;
+    overflow-y: auto;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-radius: 0 0 8px 8px;
+}
+
+.suggestions li {
+    padding: 8px 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #0f0f0f;
+}
+
+.suggestions li:hover {
+    background: #f9f9f9;
+}
+
+.s-icon {
+    color: #606060;
+    font-size: 14px;
+}
+
+
+/* =======================
+   Right Section
+======================= */
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.header-icon {
+    font-size: 22px;
+    cursor: pointer;
+    color: #0f0f0f;
+}
+
+
+/* =======================
+   Avatar + Signin
+======================= */
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #1976d2;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    position: relative;
+}
+
+
+/* Sign-in button */
+
+.signin-btn-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border: 1px solid #065fd4;
+    border-radius: 18px;
+    padding: 6px 14px;
+    cursor: pointer;
+    color: #065fd4;
+    font-weight: 500;
+    background: #fff;
+    transition: background 0.2s ease;
+}
+
+.signin-btn-wrapper:hover {
+    background: #e8f0fe;
+}
+
+.signin-icon {
+    font-size: 18px;
+    color: #065fd4;
+}
+
+.signin-text {
+    font-size: 14px;
+}
+
+
+/* User modal dropdown */
+
+.user-modal {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    padding: 12px;
+    min-width: 200px;
+    z-index: 1000;
+}
+
+.user-modal .user-name {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 14px;
+}
+
+.search-trigger {
+    display: none;
+}
+
+.user-modal .create-channel {
+    color: #065fd4;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.user-modal .create-channel:hover {
+    text-decoration: underline;
+}
+
+
+/* ==========================
+   Upload Options Popup
+========================== */
+
+.upload-options-popup {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 8px 0;
+    width: 200px;
+    z-index: 1000;
+    font-size: 14px;
+}
+
+.upload-options-popup .popup-option {
+    padding: 10px 16px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.upload-options-popup .popup-option:hover {
+    background-color: #f5f5f5;
+}
+
+
+/* Mobile Header Responsive (≤768px) */
+
+@media (max-width: 768px) {
+    .header-center {
+        display: none !important;
+    }
+    .search-trigger {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        cursor: pointer;
+        color: #0f0f0f;
+    }
+    .search-bar {
+        width: 100%;
+    }
+    .mic-btn {
+        display: none;
+    }
+    .header-right {
+        flex-shrink: 0;
+        gap: 12px;
+    }
+    .user-avatar-wrapper {
+        margin-left: auto;
+    }
+}
+
+
+/* Even smaller phones (Arial narrow), collapse search bar */
+
+@media (max-width: 480px) {
+    .header {
+        width: 95%;
+        margin: 0 auto;
+    }
+    .header-center {
+        display: none;
+    }
+    .header-left span {
+        display: none;
+    }
+    .yt-logo {
+        height: 30px;
+    }
+    .header-center {
+        display: none;
+    }
+    .search-trigger {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        cursor: pointer;
+        color: #0f0f0f;
+    }
+    /* When mobile search is active (expanded full width) */
+    .mobile-search-active {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: #fff;
+        height: 56px;
+        display: flex;
+        align-items: center;
+        padding: 0 12px;
+        z-index: 2000;
+    }
+    .mobile-search-active input {
+        flex: 1;
+        height: 36px;
+        border: 1px solid #ccc;
+        border-radius: 20px;
+        padding: 0 12px;
+        font-size: 14px;
+    }
+    .mobile-search-active .close-btn {
+        margin-left: 10px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,14 @@
+.content-area {
+    margin-left: 240px;
+    padding: 16px;
+    height: calc(100vh - 56px);
+    overflow-y: auto;
+    background: #f9f9f9;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+}

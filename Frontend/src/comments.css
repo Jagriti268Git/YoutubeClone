@@ -1,0 +1,157 @@
+.comments-section {
+    max-width: 900px;
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.comment-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.comment-box input {
+    flex: 1;
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.comment-box button {
+    padding: 6px 12px;
+    border-radius: 12px;
+    border: none;
+    background: lightgray;
+    color: grey;
+    cursor: pointer;
+}
+
+.comment-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.comment-item .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.comment-content {
+    flex: 1;
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: #555;
+}
+
+.comment-text {
+    margin: 5px 0 8px 0;
+}
+
+.comment-actions {
+    display: flex;
+    gap: 10px;
+    font-size: 0.85rem;
+}
+
+.comment-actions button {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #555;
+}
+
+.comment-actions button.active {
+    color: lightgray;
+}
+
+.comment-actions button:hover {
+    color: lightgray
+}
+
+.comment-item input[type="text"] {
+    flex: 1;
+    padding: 5px 10px;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    margin-right: 5px;
+    outline: none;
+}
+
+.comment-item input[type="text"]:focus {
+    border-color: lightgray;
+}
+
+
+/* Responsive */
+
+@media (max-width: 768px) {
+    .comment-item {
+        flex-direction: column;
+    }
+    .comment-actions {
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+    .comment-box {
+        flex-direction: column;
+    }
+}
+
+.emoji-picker {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 350px;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 8px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    z-index: 10;
+}
+
+.emoji-picker button {
+    font-size: 22px;
+    border: none;
+    background-color: #e0e0e0;
+    cursor: pointer;
+    margin: 3px;
+    border-radius: 6px;
+    padding: 4px;
+    transition: transform 0.1s ease, background-color 0.2s ease;
+}
+
+.emoji-picker button {
+    font-size: 22px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    margin: 3px;
+    transition: transform 0.1s ease;
+}
+
+.emoji-picker button:hover {
+    transform: scale(1.2);
+    background-color: #d5d5d5;
+}
+
+.emoji-toggle {
+    margin-left: 5px;
+    cursor: pointer;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 4px 8px;
+    border-radius: 6px;
+}

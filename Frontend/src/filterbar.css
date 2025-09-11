@@ -1,0 +1,32 @@
+.filter-bar {
+    position: sticky;
+    top: 56px;
+    z-index: 900;
+    display: flex;
+    gap: 12px;
+    padding: 8px 16px;
+    background: white;
+    border-bottom: 1px solid #ddd;
+    overflow-x: auto;
+    white-space: nowrap;
+    margin-left: 240px;
+}
+
+.filter-button {
+    background-color: #f2f2f2;
+    border: none;
+    border-radius: 16px;
+    padding: 6px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.filter-button:hover {
+    background-color: #e0e0e0;
+}
+
+.filter-button:first-child {
+    background-color: black;
+    color: white;
+}

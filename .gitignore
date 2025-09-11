@@ -1,0 +1,13 @@
+
+# Ignore system junk
+.DS_Store
+
+# Ignore Node.js stuff
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Ignore build artifacts
+dist/
+build/
