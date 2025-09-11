@@ -83,24 +83,25 @@
 
 ## Project Structure
 
-*frontend/
+* frontend/
 
-*│── src/
-*│   ├── components/       # Reusable components (Header, Sidebar, VideoPlayer, etc.)
+* │── src/
+* │   ├── components/       # Reusable components (Header, Sidebar, VideoPlayer, etc.)
 
 
-*│   ├── pages/            # Main pages (Home, Channel, SignIn, etc.)
+* │   ├── pages/            # Main pages (Home, Channel, SignIn, etc.)
 
-*│   ├── App.jsx           # Routes configuration
+* │   ├── App.jsx           # Routes configuration
 
-*│   ├── videosData.js     # Mock / initial videos
+* │    ├── videosData.js     # Mock / initial videos
 
-*│   ├── app.css           # Global styles
-*│── public/
+* │    ├── app.css           # Global styles
+ 
+* │── public/
 
-*│── package.json
+* │── package.json
 
-*│── README.md
+* │── README.md
 
 
 ## Responsiveness
