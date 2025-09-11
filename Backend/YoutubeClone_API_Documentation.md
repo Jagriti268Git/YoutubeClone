@@ -1,5 +1,5 @@
 
-# 📺 YouTube Clone – API Documentation
+#  YouTube Clone – API Documentation
 
 Base URL:  
 ```
@@ -8,7 +8,7 @@ http://localhost:5000/api
 
 ---
 
-## 🔐 Auth Routes
+##  Auth Routes
 
 ### **Register User**
 `POST /auth/register`  
@@ -59,7 +59,7 @@ Logs in an existing user.
 
 ---
 
-## 📺 Channel Routes
+##  Channel Routes
 
 ### **Create Channel**
 `POST /channels` *(Protected)*  
@@ -101,7 +101,7 @@ Requires `Authorization: Bearer <token>`
 
 ---
 
-## 🎬 Video Routes
+## Video Routes
 
 ### **Upload Video**
 `POST /videos` *(Protected)*  
@@ -172,7 +172,7 @@ Requires `Authorization: Bearer <token>`
 
 ---
 
-## 💬 Comments Routes
+##  Comments Routes
 
 ### **Add Comment**
 `POST /comments/:videoId` *(Protected)*  
