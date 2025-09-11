@@ -8,6 +8,7 @@
 
 
 ## Features
+
  * Video playback (like YouTube watch page)
  
  * Channels (create, view, and manage)
@@ -49,7 +50,7 @@
 
 ## Install dependencies:
 
-*npm install
+* npm install
 
 
 ## Start the development server:
