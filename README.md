@@ -269,7 +269,7 @@
 
 ##  Channel Routes
 
-### **Create Channel**
+### Create Channel**
 * `POST /channels` *(Protected)*  
 * Requires `Authorization: Bearer <token>`  
 
@@ -278,7 +278,7 @@
  * - `handle` (string, required, unique)  
 * - `picture` (file, optional – profile picture)
 
-**Response:**
+** Response:**
 * ```json
 * {
 *  "_id": "64f8...",
@@ -286,7 +286,7 @@
 *  "handle": "mychannel",
 *  "user": "64f7...",
 *  "profilePicture": "uploads/16940-profile.png"
-*}
+* }
 ```
 
 ---
@@ -311,11 +311,11 @@
 
 ## Video Routes
 
-### **Upload Video**
+## **Upload Video**
 * `POST /videos` *(Protected)*  
 * Requires `Authorization: Bearer <token>`  
 
-**Body (Form-Data):**
+** Body (Form-Data):**
 * - `title` (string, required)  
 * - `description` (string, optional)  
 * - `audience` (string, default: "notKids")  
@@ -337,10 +337,10 @@
 
 ---
 
-### **Get All Videos**
+### Get All Videos**
 * `GET /videos/allVideos`
 
-**Response:**
+## Response:**
 * ```json
 * [
 *   {
@@ -389,7 +389,7 @@
 * ```json
 * {
  * "text": "This is awesome!"
-*}
+* }
 * ```
 
 ---
@@ -404,9 +404,9 @@
 
 **Body (JSON):**
 * ```json
-*{
+* {
 *  "text": "Updated comment"
-*}
+* }
 *```
 
 ---
