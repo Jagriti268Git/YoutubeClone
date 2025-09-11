@@ -1,3 +1,14 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+
 /* =======================
    Header Layout
 ======================= */
@@ -34,7 +45,7 @@
 }
 
 .yt-logo {
-    height: 20px;
+    height: 30px;
     cursor: pointer;
 }
 
@@ -341,6 +352,10 @@
 /* Even smaller phones (Arial narrow), collapse search bar */
 
 @media (max-width: 480px) {
+    .header {
+        width: 95%;
+        margin: 0 auto;
+    }
     .header-center {
         display: none;
     }
@@ -348,7 +363,7 @@
         display: none;
     }
     .yt-logo {
-        height: 18px;
+        height: 30px;
     }
     .header-center {
         display: none;

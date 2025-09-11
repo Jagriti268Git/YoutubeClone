@@ -106,7 +106,6 @@
 
 .video-page {
     flex: 1;
-    padding: 16px;
 }
 
 .empty-state {
@@ -161,7 +160,7 @@
 
 .video-content {
     flex: 3;
-    max-width: 900px;
+    /* max-width: 900px; */
     display: flex;
     flex-direction: column;
     position: relative;
@@ -176,7 +175,6 @@
 .video-page {
     display: flex;
     gap: 20px;
-    padding: 16px;
 }
 
 .video-content {

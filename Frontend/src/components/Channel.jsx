@@ -8,6 +8,8 @@ import Sidebar from "./Sidebar";
 import VideoUploadModal from "./VideoUploadModal.jsx";
 import "../channel.css";
 import "react-toastify/dist/ReactToastify.css";
+//import { formatNumber } from "../utility/formatNumber";
+import { timeAgo } from "../utility/timeAgo";
 
 export default function Channel() {
   const { handle } = useParams();
@@ -18,6 +20,10 @@ export default function Channel() {
   const [videos, setVideos] = useState([]);
   const [editingVideo, setEditingVideo] = useState(null);
 
+  function formatNumber(num) {
+    if (num === undefined || num === null) return "0"; // ✅ fallback
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
   // Load channel from localStorage
   useEffect(() => {
     const savedChannel = localStorage.getItem("channel");
@@ -155,7 +161,11 @@ export default function Channel() {
             <button className="tab">Playlists</button>
             <button className="tab">About</button>
           </div>
-
+          <div className="channel-filters">
+            <button className="active">Latest</button>
+            <button>Popular</button>
+            <button>Oldest</button>
+          </div>
           {/* Videos Grid */}
           <div className="channel-content">
             <h3 className="video-section-title">
@@ -174,7 +184,11 @@ export default function Channel() {
                     </div>
                     <h3 className="video-title">
                       <Link to={`/watch/${video._id}`}>{video.title}</Link>
+
                     </h3>
+                    <div className="video-stats">
+                      {formatNumber(video.views)} views • {timeAgo(video.createdAt)}
+                    </div>
 
                     <div className="video-settings">
                       <FaEllipsisV className="settings-icon" />
