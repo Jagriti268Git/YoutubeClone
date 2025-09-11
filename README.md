@@ -412,6 +412,31 @@
 ---
 
 ### **Delete Comment**
-* `DELETE /comments/:id` *(Protected)*  
+* `DELETE /comments/:id` *(Protected)*
+* Testing
+
+## Use Postman or Thunder Client to test APIs.
+
+* Example request for login:
+
+* POST /api/auth/login
+ {
+   "email": "user@example.com",
+   "password": "123456"
+ }
+
+## Authentication
+
+* Protected routes require JWT token in headers:
+
+* Authorization: Bearer <your_token>
+
+## Notes
+
+* By default, file uploads are stored in /uploads.
+
+* If you want cloud storage, configure Cloudinary or AWS S3 in config/.
+
+* MongoDB must be running locally (mongod) or via Atlas.
 
 http://localhost:5173
