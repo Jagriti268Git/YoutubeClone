@@ -38,8 +38,8 @@ app.use("/api/channels", channelRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/videos", videosRoutes);
 app.use("/api/comments", commentsRoutes);
-app.
-    // Test route
+
+// Test route
 app.get("/", (req, res) => res.send("API is running..."));
 
 //  server

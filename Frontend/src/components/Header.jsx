@@ -15,6 +15,8 @@ export default function Header({
   onClear,
   suggestions = [],
   onMenuClick,
+  showCreateButton = false,
+  onUploadClick,
 }) {
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [showUserModal, setShowUserModal] = useState(false);
@@ -27,20 +29,23 @@ export default function Header({
   const modalRef = useRef(null);
   const navigate = useNavigate();
 
-  // Memoized user from localStorage to prevent re-renders
-  const user = useMemo(() => {
+  const [user, setUser] = useState(() => {
     const stored = localStorage.getItem("user");
     return stored ? JSON.parse(stored) : null;
+  });
+
+  //  user in sync with localStorage (optional if you update it elsewhere)
+  useEffect(() => {
+    const stored = localStorage.getItem("user");
+    if (stored) setUser(JSON.parse(stored));
   }, []);
-  const savedChannel = localStorage.getItem("channel");
-  const channelName = savedChannel ? JSON.parse(savedChannel) : null;
+  // const savedChannel = localStorage.getItem("channel");
+  // const channelName = savedChannel ? JSON.parse(savedChannel) : null;
   // Loaded  channel from localStorage or fetch from backend once
   useEffect(() => {
-    if (!user?.handle) return;
-
-    const savedChannel = localStorage.getItem("channel");
-    if (savedChannel) {
-      setChannel(JSON.parse(savedChannel));
+    if (!user?.handle) {
+      setChannel(null);
+      localStorage.removeItem("channel");
       return;
     }
 
@@ -53,11 +58,13 @@ export default function Header({
         }
       } catch (err) {
         console.error("Error fetching channel:", err);
+        setChannel(null);
+        localStorage.removeItem("channel");
       }
     };
 
     fetchChannel();
-  }, [user]);
+  }, [user?.handle, channel?._id]);
   // Closed user modal when clicking outside
   useEffect(() => {
     function handleClickOutside(e) {
@@ -72,7 +79,38 @@ export default function Header({
     }
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [showUserModal]);
+  // Loaded channel from localStorage or fetch from backend once
+  // useEffect(() => {
+  //   if (!user?.handle) return;
 
+  //   const fetchChannel = async () => {
+  //     try {
+  //       const res = await axios.get(
+  //         `http://localhost:5000/api/channels/${user.handle}`
+  //       );
+  //       if (res.status === 200 && res.data) {
+  //         setChannel(res.data);
+  //         localStorage.setItem("channel", JSON.stringify(res.data));
+  //       } else {
+  //         setChannel(null);
+  //         localStorage.removeItem("channel");
+  //       }
+  //     } catch (err) {
+  //       console.error("Error fetching channel:", err);
+  //       setChannel(null);
+  //       localStorage.removeItem("channel");
+  //     }
+  //   };
+
+  //   fetchChannel();
+  // }, [user]);
+
+  // Keep localStorage in sync when channel changes
+  /*  useEffect(() => {
+     if (channel) {
+       localStorage.setItem("channel", JSON.stringify(channel));
+     }
+   }, [channel]); */
   // Handlers
   const handleAvatarClick = () => setShowUserModal((prev) => !prev);
 
@@ -214,35 +252,39 @@ export default function Header({
         {/* User Avatar */}
         {user ? (
           <div className="user-avatar-wrapper">
-            <div className="avatar" onClick={handleAvatarClick}>
-              {user.avatar || user.email.charAt(0).toUpperCase()}
-            </div>
+            <div className="avatar" onClick={handleAvatarClick}> {channel?.avatar ? <img src={channel.avatar} alt={channel.name} className="avatar-img" /> : (channel ? channel.name.charAt(0).toUpperCase() : user.email.charAt(0).toUpperCase())} </div>
 
             {showUserModal && (
               <div className="user-modal" ref={modalRef}>
                 <p className="user-name">{user.name || user.email}</p>
-
-                {/* Channel name or Create Channel */}
-                {channelName ? (
-
-                  <p
-                    className="handle-link"
-                    style={{ cursor: "pointer", color: "black", fontWeight: "500" }}
+                {channel ? (
+                  <div
+                    className="channel-link"
+                    style={{ cursor: "pointer", padding: "6px 0" }}
                     onClick={() => {
-                      navigate(`/channel/${channelName.handle}`);
+                      navigate(`/channel/${channel.handle}`);
                       setShowUserModal(false);
                     }}
                   >
-                    <p>{channelName.handle}</p>
-                    {channelName.name}
-                  </p>
-
+                    <div style={{ fontWeight: "600", fontSize: "14px" }}>
+                      {channel.name}
+                    </div>
+                    <div style={{ fontSize: "12px", color: "gray" }}>
+                      {channel.handle}
+                    </div>
+                  </div>
                 ) : (
-                  <p className="create-channel" onClick={() => setIsModalOpen(true)}>
-                    Create a Channel
-                  </p>
+                  <div
+                    className="create-channel"
+                    style={{ cursor: "pointer", color: "blue", padding: "6px 0" }}
+                    onClick={() => {
+                      setIsModalOpen(true);
+                      setShowUserModal(false);
+                    }}
+                  >
+                    + Create Channel
+                  </div>
                 )}
-
                 <p
                   className="logout-text"
                   style={{ cursor: "pointer", marginTop: "8px" }}
@@ -261,14 +303,21 @@ export default function Header({
         )}
       </div>
 
-      {/* Channel Modal */}
       <CreateChannelModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         onChannelCreated={(newChannel) => {
           setChannel(newChannel);
           localStorage.setItem("channel", JSON.stringify(newChannel));
+
+          // ensure user.handle is updated
+          const storedUser = JSON.parse(localStorage.getItem("user")) || {};
+          const updatedUser = { ...storedUser, handle: newChannel.handle };
+          localStorage.setItem("user", JSON.stringify(updatedUser));
+          setUser(updatedUser);
+
           setIsModalOpen(false);
+          navigate(`/channel/${newChannel.handle}`);
         }}
       />
     </header>

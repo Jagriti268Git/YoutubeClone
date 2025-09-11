@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import { FaUserCircle, FaPlay, FaEllipsisV } from "react-icons/fa";
 import Header from "./Header";
 import Sidebar from "./Sidebar";
-import VideoUploadModal from "./VideoUploadModal";
+import VideoUploadModal from "./VideoUploadModal.jsx";
 import "../channel.css";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -121,7 +121,12 @@ export default function Channel() {
               <div className="channel-avatar-wrapper">
                 {channel.profilePicture ? (
                   <img
-                    src={channel.profilePicture.startsWith("http") ? channel.profilePicture : `http://localhost:5000/${channel.profilePicture}`}
+                    key={channel.profilePicture} // force re-render when updated
+                    src={
+                      channel.profilePicture.startsWith("http")
+                        ? channel.profilePicture
+                        : `http://localhost:5000${channel.profilePicture}`
+                    }
                     alt={channel.name}
                     className="channel-avatar"
                   />
