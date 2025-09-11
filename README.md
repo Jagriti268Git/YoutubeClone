@@ -73,6 +73,8 @@
 
 * axios.defaults.baseURL = "http://localhost:5000/api";
 
+* A Postman collection for the apis are added in the project folder.
+
  ## Database 
 
  * Mongodb for maintaining data of the logged in user.
