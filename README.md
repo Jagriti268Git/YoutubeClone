@@ -16,7 +16,7 @@
  
  * Authentication (Sign up / Sign in)
  
- * Fully responsive (Mobile, Tablet, Desktop, 4K TVs)
+ * Fully responsive (Mobile, Tablet, Desktop)
  
  * Video uploads with thumbnails
 
@@ -60,7 +60,7 @@
 
 * JWT authentication for maintaining the login based authentication throughout the app 
 
-* Bcrypt for storing password
+* Bcrypt for encrypted and hashed password
 
 * Update the API base URL if needed in your code (e.g., axios calls):
 
