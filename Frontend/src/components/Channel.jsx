@@ -210,6 +210,7 @@ export default function Channel() {
           onClose={() => setShowUploadModal(false)}
           channelId={channel._id}
           channelHandle={channel.handle}
+          channelName={channel.name}
           editingVideo={editingVideo}
           onVideoUploaded={handleVideoUploaded}
         />

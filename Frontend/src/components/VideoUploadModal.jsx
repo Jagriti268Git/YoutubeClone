@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../videouploadmodal.css";
 
-export default function VideoUploadModal({ onClose, channelHandle, onVideoUploaded, editingVideo }) {
+export default function VideoUploadModal({ onClose, channelHandle, onVideoUploaded, channelName, editingVideo }) {
   const navigate = useNavigate();
 
   const [videoFile, setVideoFile] = useState(null);
@@ -16,7 +16,7 @@ export default function VideoUploadModal({ onClose, channelHandle, onVideoUpload
   const [audience, setAudience] = useState(editingVideo ? editingVideo.audience : "notKids");
   const [loading, setLoading] = useState(false);
   const [category, setCategory] = useState(editingVideo ? editingVideo.category : "General");
-
+  const [uploader, setUploader] = useState(editingVideo ? editingVideo.uploader : channelName);
   useEffect(() => {
     if (editingVideo) {
       setTitle(editingVideo.title);
@@ -26,8 +26,11 @@ export default function VideoUploadModal({ onClose, channelHandle, onVideoUpload
       setVideoFile(null);
       setThumbnail(null);
       setCategory(editingVideo.category);
+      setUploader(editingVideo.uploader);
+    } else {
+      setUploader(channelName);
     }
-  }, [editingVideo]);
+  }, [editingVideo, channelName]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -42,6 +45,7 @@ export default function VideoUploadModal({ onClose, channelHandle, onVideoUpload
       formData.append("title", title);
       formData.append("description", description);
       formData.append("audience", audience);
+      formData.append("uploader", uploader);
       if (tags) formData.append("tags", tags);
       if (videoFile) formData.append("videoFile", videoFile);
       if (thumbnail) formData.append("thumbnail", thumbnail);
@@ -125,7 +129,10 @@ export default function VideoUploadModal({ onClose, channelHandle, onVideoUpload
               onChange={(e) => setThumbnail(e.target.files[0])}
             />
           </label>
-
+          <label>
+            Uploader
+            <input type="text" value={uploader} readOnly />
+          </label>
           <label>
             Tags (comma separated)
             <input

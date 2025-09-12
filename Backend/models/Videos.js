@@ -7,6 +7,7 @@ const videoSchema = new mongoose.Schema({
     thumbnailUrl: { type: String, default: "" },
     channel: { type: mongoose.Schema.Types.ObjectId, ref: "Channel", required: true },
     tags: { type: [String], default: [] },
+    uploader: { type: String, required: true },
     category: { type: String, default: "General" },
     audience: { type: String, enum: ["notKids", "kids"], default: "notKids" },
     createdAt: { type: Date, default: Date.now },
