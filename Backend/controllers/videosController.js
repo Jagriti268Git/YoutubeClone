@@ -34,6 +34,7 @@ export const createVideo = async(req, res) => {
             videoUrl,
             thumbnailUrl,
             channel: channel._id,
+            uploader: channel.name,
             audience: audience || "notKids",
             tags: tags ? tags.split(",").map(tag => tag.trim()) : [],
             category: category || "General",
