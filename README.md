@@ -247,6 +247,7 @@
 * ```
 
 **Response:**
+
 * ```json
 * {
 * "_id": "64f7...",
@@ -259,7 +260,9 @@
 * ---
 
 ### **Login User**
-* `POST /auth/login`  
+
+* `POST /auth/login`
+
 * Logs in an existing user.
 
 **Body (JSON):**
@@ -271,6 +274,7 @@
 * ```
 
 **Response:**
+
 * ```json
 * {
  * "_id": "64f7...",
@@ -285,16 +289,20 @@
 ##  Channel Routes
 
 ### Create Channel**
+
 * `POST /channels` *(Protected)*  
 * Requires `Authorization: Bearer <token>`  
 
 **Body (Form-Data):**
+
 * - `name` (string, required)  
  * - `handle` (string, required, unique)  
 * - `picture` (file, optional – profile picture)
 
 ** Response:**
+
 * ```json
+  
 * {
 *  "_id": "64f8...",
 *  "name": "My Channel",
@@ -303,17 +311,20 @@
 *  "profilePicture": "uploads/16940-profile.png"
 * }
 ```
-
 ---
 
 ### **Get Channel by Handle**
+
 * `GET /channels/:handle`
 
-**Example:**  
+**Example:**
+
 * `GET /channels/mychannel`
 
 **Response:**
+
 * ```json
+
 * {
 *  "_id": "64f8...",
 *  "name": "My Channel",
@@ -321,7 +332,6 @@
 *  "profilePicture": "uploads/16940-profile.png"
 * }
 ```
-
 ---
 
 ## Video Routes
@@ -352,10 +362,12 @@
 
 ---
 
-### Get All Videos**
+## Get All Videos
+
 * `GET /videos/allVideos`
 
-## Response:**
+## Response:
+
 * ```json
 * [
 *   {
@@ -370,17 +382,21 @@
 ---
 
 ### **Get Videos by Channel**
+
 * `GET /videos/channel/:channelId`
 
-**Example:**  
+**Example:**
+
 * `GET /videos/channel/64f8...`
 
 ---
 
 ### **Update Video**
+
 * `PUT /videos/:id` *(Protected)*  
 
 **Body (Form-Data):**
+
 * - `title` (string)  
 * - `description` (string)  
 * - `audience` (string)  
@@ -391,6 +407,7 @@
 ---
 
 ### **Delete Video**
+
 * `DELETE /videos/:id` *(Protected)*  
 
 ---
@@ -398,9 +415,11 @@
 ##  Comments Routes
 
 ### **Add Comment**
+
 * `POST /comments/:videoId` *(Protected)*  
 
 **Body (JSON):**
+
 * ```json
 * {
  * "text": "This is awesome!"
@@ -409,15 +428,18 @@
 
 ---
 
-### **Get Comments for a Video**
+## Get Comments for a Video**
+
 * `GET /comments/:videoId`
 
 ---
 
 ### **Update Comment**
+
 * `PUT /comments/:id` *(Protected)*  
 
 **Body (JSON):**
+
 * ```json
 * {
 *  "text": "Updated comment"
