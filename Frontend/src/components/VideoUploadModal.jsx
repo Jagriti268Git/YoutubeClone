@@ -15,7 +15,7 @@ export default function VideoUploadModal({ onClose, channelHandle, onVideoUpload
   const [tags, setTags] = useState(editingVideo ? editingVideo.tags?.join(",") : "");
   const [audience, setAudience] = useState(editingVideo ? editingVideo.audience : "notKids");
   const [loading, setLoading] = useState(false);
-
+  const [category, setCategory] = useState(editingVideo ? editingVideo.category : "General");
 
   useEffect(() => {
     if (editingVideo) {
@@ -25,6 +25,7 @@ export default function VideoUploadModal({ onClose, channelHandle, onVideoUpload
       setAudience(editingVideo.audience);
       setVideoFile(null);
       setThumbnail(null);
+      setCategory(editingVideo.category);
     }
   }, [editingVideo]);
 
@@ -44,7 +45,7 @@ export default function VideoUploadModal({ onClose, channelHandle, onVideoUpload
       if (tags) formData.append("tags", tags);
       if (videoFile) formData.append("videoFile", videoFile);
       if (thumbnail) formData.append("thumbnail", thumbnail);
-
+      if (category) formData.append("category", category);
       const url = editingVideo
         ? `http://localhost:5000/api/videos/${editingVideo._id}`
         : `http://localhost:5000/api/videos`;
@@ -133,7 +134,14 @@ export default function VideoUploadModal({ onClose, channelHandle, onVideoUpload
               onChange={(e) => setTags(e.target.value)}
             />
           </label>
-
+          <label>
+            Category
+            <input
+              type="text"
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
+            />
+          </label>
           <label>
             Audience
             <select

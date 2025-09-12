@@ -5,7 +5,7 @@ import fs from "fs";
 
 export const createVideo = async(req, res) => {
     try {
-        const { title, description, audience, tags } = req.body;
+        const { title, description, audience, tags, category } = req.body;
 
 
         const userId = req.user.userId || req.user._id;
@@ -36,6 +36,7 @@ export const createVideo = async(req, res) => {
             channel: channel._id,
             audience: audience || "notKids",
             tags: tags ? tags.split(",").map(tag => tag.trim()) : [],
+            category: category || "General",
         });
 
         await video.save();
