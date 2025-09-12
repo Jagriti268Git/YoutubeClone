@@ -6,12 +6,11 @@
 
 * It provides features like video playback, channel pages, comments, subscriptions, authentication, and responsive layouts (mobile, tablet, desktop).
 
-
 ## Features
 
  * Video playback (like YouTube watch page)
  
- * Channels (create, view, and manage)
+ * Channels (create, view)
  
  * Comments (add, edit, delete)
  
@@ -19,11 +18,8 @@
  
  * Fully responsive (Mobile, Tablet, Desktop, 4K TVs)
  
- * Dark / Light UI toggle (optional)
- 
  * Video uploads with thumbnails
 
- 
  ## Tech Stack
  
 * React.js + React Router DOM
@@ -44,7 +40,7 @@
 
 * https://github.com/Jagriti268Git/YoutubeClone.git
 
-* cd youtube-clone-frontend
+* cd youtube-clone-frontend-backend
 
 ## Install dependencies:
 
@@ -76,16 +72,16 @@
 
  * Mongodb for maintaining data of the logged in user.
 
- * Documents are Video, User, Channel, Comments.
+ * Collection - YoutubeClone  - Documents are Video, User, Channel, Comments.
 
 ## Project Structure
 
 * frontend/
 
 * │── src/
+ 
 * │   ├── components/       # Reusable components (Header, Sidebar, VideoPlayer, etc.)
-
-
+ 
 * │   ├── pages/            # Main pages (Home, Channel, SignIn, etc.)
 
 * │   ├── App.jsx           # Routes configuration
@@ -100,7 +96,6 @@
 
 * │── README.md
 
-
 ## Responsiveness
 
 * Mobile (iPhone, Samsung, Galaxy, etc.) → Sidebar hidden, bottom nav enabled
@@ -111,7 +106,6 @@
 
 * 4K TVs → Adjusted spacing for large screens
 
-
 ## Available Routes
 
 * / → Home (video feed)
@@ -121,7 +115,6 @@
 * /channel/:handle → Channel page
 
 * /signin → Sign In page
-
 
 ## for backend the api documentation file is added in the backend folder for the endpoint required for integration in frontend.
 
@@ -148,20 +141,33 @@
 ## Project Structure
 
 * backend/
+  
 * ├── config/          # Database & environment setup
+  
 * ├── controllers/     # Route handlers (business logic)
+  
 * ├── models/          # Mongoose schemas (User, Channel, Video, Comment, etc.)
+  
 * ├── routes/          # API route definitions
+  
 * ├── middleware/      # Authentication & validation middleware
+  
 * ├── uploads/         # Uploaded files (if storing locally)
+  
 * ├── server.js        # App entry point
+  
 * └── README.md        # Project documentation
+  
 ##  Getting Started
+
 ## Clone the repository
+
  * git clone https://github.com/your-username/youtube-clone.git
+   
  * cd youtube-clone/backend
 
 ## Install dependencies
+
 * npm install
 
 ## Configure environment variables
@@ -169,18 +175,23 @@
 * Create a .env file in the backend folder:
 
 * PORT=5000
+  
 * MONGO_URI=mongodb://localhost:27017/youtube-clone
+  
 * JWT_SECRET=your_jwt_secret
+ 
 * CLOUDINARY_URL=your_cloudinary_url   # (if using cloud uploads)
 
 ## Start the server
+
 * npm run dev   # starts with nodemon
 
-
 * Server will run at:
+  
 * http://localhost:5000
 
 ## API Endpoints
+
 * Auth
 
 * POST /api/auth/register → Register user
@@ -209,21 +220,25 @@
 
 #  YouTube Clone – API Documentation
 
- * Base URL:  
+ * Base URL:
+   
 ```
 * http://localhost:5000/api
-```
 
+```
 ---
 
 ##  Auth Routes
 
 ### **Register User**
- * `POST /auth/register`  
+
+ * `POST /auth/register`
+   
  * Registers a new user.
 
 **Body (JSON):**
-* ```json
+
+```json
 * {
 *  "name": "John Doe",
 *  "email": "john@example.com",
@@ -411,8 +426,10 @@
 
 ---
 
-### **Delete Comment**
+## Delete Comment**
+
 * `DELETE /comments/:id` *(Protected)*
+
 * Testing
 
 ## Use Postman or Thunder Client to test APIs.
@@ -435,8 +452,6 @@
 
 * By default, file uploads are stored in /uploads.
 
-* If you want cloud storage, configure Cloudinary or AWS S3 in config/.
-
-* MongoDB must be running locally (mongod) or via Atlas.
+* MongoDB  running locally (mongod) or via Compass.
 
 http://localhost:5173
