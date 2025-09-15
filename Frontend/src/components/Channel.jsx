@@ -10,8 +10,9 @@ import "../channel.css";
 import "react-toastify/dist/ReactToastify.css";
 //import { formatNumber } from "../utility/formatNumber";
 import { timeAgo } from "../utility/timeAgo";
-
+import { useNavigate } from "react-router-dom";
 export default function Channel() {
+  const navigate = useNavigate();
   const { handle } = useParams();
   const [channel, setChannel] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -148,6 +149,12 @@ export default function Channel() {
                   <p className="description">{channel.description || ""}</p>
                   <button className={`subscribe-btn ${channel.subscribed ? "subscribed" : ""}`}>
                     {channel.subscribed ? "Subscribed" : "Subscribe"}
+                  </button>
+                  <button style={{ margin: "5px" }} onClick={() => {
+                    setShowUploadModal(true);
+                  }} className={`subscribe-btn`
+                  }>
+                    Upload Video
                   </button>
                 </div>
               </div>
