@@ -6,6 +6,14 @@
 
 * It provides features like video playback, channel pages, comments, subscriptions, authentication, and responsive layouts (mobile, tablet, desktop).
 
+## to run the project follow the instruction
+
+* After unzipping the file
+ 
+* cd Frontend && npm install
+ 
+* cd ../Backend && npm install
+
 ## Features
 
  * Video playback (like YouTube watch page)
@@ -475,5 +483,7 @@
 * By default, file uploads are stored in /uploads.
 
 * MongoDB  running locally (mongod) or via Compass.
+
+
 
 http://localhost:5173
