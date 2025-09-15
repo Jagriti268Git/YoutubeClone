@@ -44,7 +44,7 @@ export default function Sidebar({ expanded, isOpen, toggleSidebar }) {
           // --- Expanded: full sidebar ---
           <>
             <ul className="side-section">
-              <li><FaHome size={20} /> <span>Home</span></li>
+              <li onClick={() => navigate("/")}><FaHome size={20} /> <span>Home</span></li>
               <li><SiYoutubeshorts size={20} /> <span>Shorts</span></li>
               <li><MdSubscriptions size={20} /> <span>Subscriptions</span></li>
               <li><FaRegUserCircle size={20} /> <span>You</span></li>

@@ -13,10 +13,11 @@ import Comments from "./Comments";
 import { formatNumber } from "../utility/formatNumber";
 import { timeAgo } from "../utility/timeAgo";
 import "../VideoPlayer.css";
+import { useNavigate } from "react-router-dom";
 
 export default function VideoPlayer({ videos }) {
   const { id } = useParams();
-
+  const navigate = useNavigate();
   const [allVideos, setAllVideos] = useState(videos || []);
   const [loading, setLoading] = useState(!videos?.length);
   const [searchTerm, setSearchTerm] = useState("");
