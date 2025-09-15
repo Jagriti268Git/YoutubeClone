@@ -1,0 +1,519 @@
+[{
+  "_id": {
+    "$oid": "68ac992a675cb09d585de1ad"
+  },
+  "title": "video",
+  "description": "video",
+  "videoUrl": "uploads/videos/1756141866884-3195394-uhd.mp4",
+  "thumbnailUrl": "/uploads/thumbnails/1756142060690-channel .png",
+  "channel": {
+    "$oid": "68ac98ff675cb09d585de1a6"
+  },
+  "tags": [
+    "music",
+    "travel"
+  ],
+  "audience": "notKids",
+  "createdAt": {
+    "$date": "2025-08-25T17:11:06.933Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68aca672675cb09d585de20b"
+  },
+  "title": "abc",
+  "description": "abc",
+  "videoUrl": "uploads/videos/1756145265898-4114797-uhd_3840_2160_25fps.mp4",
+  "thumbnailUrl": "uploads/thumbnails/1756145265985-bugfix.png",
+  "channel": {
+    "$oid": "68ac98ff675cb09d585de1a6"
+  },
+  "tags": [
+    "music",
+    "fun"
+  ],
+  "audience": "notKids",
+  "createdAt": {
+    "$date": "2025-08-25T18:07:46.004Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68aca6fd675cb09d585de21e"
+  },
+  "title": "weather",
+  "description": "weather forecast",
+  "videoUrl": "uploads/videos/1756145405073-VID-20250620-WA0000.mp4",
+  "thumbnailUrl": "uploads/thumbnails/1756145405092-commentsEdit.png",
+  "channel": {
+    "$oid": "68ac98ff675cb09d585de1a6"
+  },
+  "tags": [
+    "music",
+    "bhajan"
+  ],
+  "audience": "notKids",
+  "createdAt": {
+    "$date": "2025-08-25T18:10:05.110Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68ad71218b1c88ec9236132e"
+  },
+  "title": "weather",
+  "description": "weather forecast app ",
+  "videoUrl": "uploads/videos/1756197153256-VID-20250620-WA0000.mp4",
+  "thumbnailUrl": "uploads/thumbnails/1756197153281-screenshot1.png",
+  "channel": {
+    "$oid": "68ad70d28b1c88ec92361327"
+  },
+  "tags": [
+    "weather"
+  ],
+  "audience": "notKids",
+  "createdAt": {
+    "$date": "2025-08-26T08:32:33.290Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68ad75108b1c88ec92361347"
+  },
+  "title": "video",
+  "description": "video file",
+  "videoUrl": "uploads/videos/1756198160263-4114797-uhd_3840_2160_25fps.mp4",
+  "thumbnailUrl": "uploads/thumbnails/1756198160333-channel .png",
+  "channel": {
+    "$oid": "68ad70d28b1c88ec92361327"
+  },
+  "tags": [
+    "machines",
+    "gadgets"
+  ],
+  "audience": "notKids",
+  "createdAt": {
+    "$date": "2025-08-26T08:49:20.365Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68adbe668b1c88ec9236141f"
+  },
+  "title": "the video",
+  "description": "the video file",
+  "videoUrl": "uploads/videos/1756216934226-4114797-uhd_3840_2160_25fps.mp4",
+  "thumbnailUrl": "uploads/thumbnails/1756216934269-channelpaglink.png",
+  "channel": {
+    "$oid": "68adbe188b1c88ec92361418"
+  },
+  "tags": [
+    "gadgets"
+  ],
+  "audience": "notKids",
+  "createdAt": {
+    "$date": "2025-08-26T14:02:14.305Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68adc2db8b1c88ec92361431"
+  },
+  "title": "video",
+  "description": "video file",
+  "videoUrl": "uploads/videos/1756218075838-file_example_MP4_480_1_5MG.mp4",
+  "thumbnailUrl": "uploads/thumbnails/1756218075842-channel-inital-page.png",
+  "channel": {
+    "$oid": "68adbe188b1c88ec92361418"
+  },
+  "tags": [
+    "music"
+  ],
+  "audience": "notKids",
+  "createdAt": {
+    "$date": "2025-08-26T14:21:15.857Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68add8b9afa19ea79638ab58"
+  },
+  "title": "video",
+  "description": "video file",
+  "videoUrl": "uploads/videos/1756223673131-3195394-uhd.mp4",
+  "thumbnailUrl": "uploads/thumbnails/1756223673171-channel .png",
+  "channel": {
+    "$oid": "68add88fafa19ea79638ab51"
+  },
+  "tags": [
+    "medicines"
+  ],
+  "audience": "notKids",
+  "createdAt": {
+    "$date": "2025-08-26T15:54:33.207Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68adf425bf0c9df8d3623a2c"
+  },
+  "title": "video",
+  "description": "video file",
+  "videoUrl": "uploads/videos/1756230693675-3195394-uhd.mp4",
+  "thumbnailUrl": "uploads/thumbnails/1756230693715-channel .png",
+  "channel": {
+    "$oid": "68adf3fabf0c9df8d3623a25"
+  },
+  "tags": [
+    "music"
+  ],
+  "audience": "notKids",
+  "createdAt": {
+    "$date": "2025-08-26T17:51:33.753Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68af2fcc00bca548a23104dd"
+  },
+  "title": "songs",
+  "description": "a song ",
+  "videoUrl": "uploads/videos/1756311500052-44263-438612336_tiny.mp4",
+  "thumbnailUrl": "uploads/thumbnails/1756311500068-before-toggle.png",
+  "channel": {
+    "$oid": "68af2bab00bca548a2310491"
+  },
+  "tags": [
+    "music",
+    "song"
+  ],
+  "audience": "notKids",
+  "createdAt": {
+    "$date": "2025-08-27T16:18:20.077Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68af325b00bca548a23104f6"
+  },
+  "title": "nature",
+  "description": "nature ",
+  "videoUrl": "uploads/videos/1756312155754-36065-410587616_tiny.mp4",
+  "thumbnailUrl": "uploads/thumbnails/1756312155760-bugfix.png",
+  "channel": {
+    "$oid": "68af2bab00bca548a2310491"
+  },
+  "tags": [
+    "nature"
+  ],
+  "audience": "notKids",
+  "createdAt": {
+    "$date": "2025-08-27T16:29:15.769Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68af329300bca548a23104fb"
+  },
+  "title": "illusions",
+  "description": "illusions",
+  "videoUrl": "uploads/videos/1756312211255-31542-387662298_tiny.mp4",
+  "thumbnailUrl": "uploads/thumbnails/1756312211266-aftertoggle.png",
+  "channel": {
+    "$oid": "68af2bab00bca548a2310491"
+  },
+  "tags": [
+    "illusions"
+  ],
+  "audience": "notKids",
+  "createdAt": {
+    "$date": "2025-08-27T16:30:11.272Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68c13c96d29e1bc61197c987"
+  },
+  "title": "Video of a bird",
+  "description": "shortvideo of a bird",
+  "videoUrl": "uploads/videos/1757494422364-36065-410587616_tiny.mp4",
+  "thumbnailUrl": "uploads/thumbnails/1757494422375-beachThumb.webp",
+  "channel": {
+    "$oid": "68c13c35d29e1bc61197c980"
+  },
+  "tags": [
+    "All"
+  ],
+  "audience": "notKids",
+  "createdAt": {
+    "$date": "2025-09-10T08:53:42.382Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68c2798179ec6a3789739530"
+  },
+  "title": "galaxy",
+  "description": "mind relaxing video",
+  "videoUrl": "uploads/videos/1757575552997-24212-340670726_tiny.mp4",
+  "thumbnailUrl": "uploads/thumbnails/1757575553016-illusionsThumb.jpeg",
+  "channel": {
+    "$oid": "68c278f479ec6a3789739529"
+  },
+  "tags": [
+    "all"
+  ],
+  "audience": "notKids",
+  "createdAt": {
+    "$date": "2025-09-11T07:25:53.030Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68c2a8eb79ec6a37897397d9"
+  },
+  "title": "beach",
+  "description": "beach ",
+  "videoUrl": "uploads/videos/1757587691374-72566-543910236_tiny.mp4",
+  "thumbnailUrl": "uploads/thumbnails/1757587691408-beachThumb.jpeg",
+  "channel": {
+    "$oid": "68c2993179ec6a3789739786"
+  },
+  "tags": [
+    "all"
+  ],
+  "audience": "notKids",
+  "createdAt": {
+    "$date": "2025-09-11T10:48:11.428Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68c3095c8e524655f2da53f1"
+  },
+  "title": "party",
+  "description": "celebrations ",
+  "videoUrl": "uploads/videos/1757612380492-44263-438612336_tiny.mp4",
+  "thumbnailUrl": "uploads/thumbnails/1757612380518-illusionsThumb.jpeg",
+  "channel": {
+    "$oid": "68c2993179ec6a3789739786"
+  },
+  "tags": [
+    "All"
+  ],
+  "audience": "notKids",
+  "createdAt": {
+    "$date": "2025-09-11T17:39:40.540Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68c3dc0809a899ebecbd2868"
+  },
+  "title": "meditation",
+  "description": "a relaxing video on meditation",
+  "videoUrl": "uploads/videos/1757666312706-31542-387662298_tiny.mp4",
+  "thumbnailUrl": "uploads/thumbnails/1757666312721-illusionsThumb.jpeg",
+  "channel": {
+    "$oid": "68c3db4309a899ebecbd285e"
+  },
+  "tags": [
+    "All"
+  ],
+  "audience": "notKids",
+  "createdAt": {
+    "$date": "2025-09-12T08:38:32.735Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68c441850ae58fa2faeee8c9"
+  },
+  "title": "relaxing video",
+  "description": "a relaxing mind calming video",
+  "videoUrl": "uploads/videos/1757692293671-31542-387662298_tiny.mp4",
+  "thumbnailUrl": "uploads/thumbnails/1757692293682-illusionsThumb.jpeg",
+  "channel": {
+    "$oid": "68c3db4309a899ebecbd285e"
+  },
+  "tags": [
+    "All"
+  ],
+  "category": "Meditation",
+  "audience": "notKids",
+  "createdAt": {
+    "$date": "2025-09-12T15:51:33.698Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68c445a729363b341ff783fb"
+  },
+  "title": "christmas",
+  "description": "A royal christmas occassion",
+  "videoUrl": "uploads/videos/1757693351111-44263-438612336_tiny.mp4",
+  "thumbnailUrl": "uploads/thumbnails/1757693351132-songsThumb.webp",
+  "channel": {
+    "$oid": "68c3db4309a899ebecbd285e"
+  },
+  "tags": [
+    "all"
+  ],
+  "category": "General",
+  "audience": "notKids",
+  "createdAt": {
+    "$date": "2025-09-12T16:09:11.140Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68c468d5682a1372a2d61a00"
+  },
+  "title": "relaxing video",
+  "description": "A relaxing illusion to calm the mind ,fall asleep faster",
+  "videoUrl": "uploads/videos/1757702357768-31542-387662298_tiny.mp4",
+  "thumbnailUrl": "uploads/thumbnails/1757702357784-illusionsThumb.jpeg",
+  "channel": {
+    "$oid": "68c3db4309a899ebecbd285e"
+  },
+  "tags": [
+    "All"
+  ],
+  "uploader": "JagritiMishra",
+  "category": "Meditation",
+  "audience": "notKids",
+  "createdAt": {
+    "$date": "2025-09-12T18:39:17.812Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68c46d374057bf99c21c9021"
+  },
+  "title": "beach vibes",
+  "description": "A beautiful beach",
+  "videoUrl": "uploads/videos/1757703479226-72566-543910236_tiny.mp4",
+  "thumbnailUrl": "uploads/thumbnails/1757703479253-beachThumb.webp",
+  "channel": {
+    "$oid": "68c3db4309a899ebecbd285e"
+  },
+  "tags": [
+    "All"
+  ],
+  "uploader": "JagritiMishra",
+  "category": "Beach",
+  "audience": "notKids",
+  "createdAt": {
+    "$date": "2025-09-12T18:57:59.267Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68c53d274057bf99c21c909e"
+  },
+  "title": "celebration",
+  "description": "celebration",
+  "videoUrl": "uploads/videos/1757756711007-44263-438612336_tiny.mp4",
+  "thumbnailUrl": "uploads/thumbnails/1757756711036-illusionsThumb.jpeg",
+  "channel": {
+    "$oid": "68c53cb84057bf99c21c908d"
+  },
+  "tags": [
+    "all"
+  ],
+  "uploader": "jagriti",
+  "category": "festival",
+  "audience": "notKids",
+  "createdAt": {
+    "$date": "2025-09-13T09:45:11.040Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68c541c74057bf99c21c90ca"
+  },
+  "title": "illusions",
+  "description": "a vshort video on illusions",
+  "videoUrl": "uploads/videos/1757757895923-24212-340670726_tiny.mp4",
+  "thumbnailUrl": "uploads/thumbnails/1757757895936-illusionsThumb.jpeg",
+  "channel": {
+    "$oid": "68c5417c4057bf99c21c90c0"
+  },
+  "tags": [
+    "all"
+  ],
+  "uploader": "jagriti",
+  "category": "Illusions",
+  "audience": "notKids",
+  "createdAt": {
+    "$date": "2025-09-13T10:04:55.942Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68c548fc4057bf99c21c910b"
+  },
+  "title": "Beaches",
+  "description": "Beaches on the go",
+  "videoUrl": "uploads/videos/1757759740447-72566-543910236_tiny.mp4",
+  "thumbnailUrl": "/uploads/thumbnails/1757759760705-beachThumb.jpeg",
+  "channel": {
+    "$oid": "68c548ab4057bf99c21c9101"
+  },
+  "tags": [
+    "All"
+  ],
+  "uploader": "Jagriti Mishra",
+  "category": "beaches",
+  "audience": "notKids",
+  "createdAt": {
+    "$date": "2025-09-13T10:35:40.498Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68c54b374057bf99c21c913c"
+  },
+  "title": "Beach",
+  "description": "maldives ocean bicycle riding on the beach",
+  "videoUrl": "uploads/videos/1757760311245-72566-543910236_tiny.mp4",
+  "thumbnailUrl": "uploads/thumbnails/1757760311286-beachThumb.jpeg",
+  "channel": {
+    "$oid": "68c54aea4057bf99c21c9132"
+  },
+  "tags": [
+    "All"
+  ],
+  "uploader": "Jagriti Mishra",
+  "category": "Beach",
+  "audience": "notKids",
+  "createdAt": {
+    "$date": "2025-09-13T10:45:11.291Z"
+  },
+  "__v": 0
+}]

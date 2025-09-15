@@ -12,7 +12,7 @@ export default function Comments({ video }) {
   const [editingCommentId, setEditingCommentId] = useState(null);
   const [editingText, setEditingText] = useState("");
   const [showEmojis, setShowEmojis] = useState(false); // Emoji picker toggle
-
+  const [emojiTarget, setEmojiTarget] = useState(null);
   const token = localStorage.getItem("token");
 
   // Fetch comments
@@ -41,9 +41,12 @@ export default function Comments({ video }) {
     fetchComments();
   }, [video]);
 
-  // Add emoji to comment
   const addEmoji = (emoji) => {
-    setNewComment((prev) => prev + emoji);
+    if (emojiTarget === "new") {
+      setNewComment((prev) => prev + emoji);
+    } else if (emojiTarget === "edit") {
+      setEditingText((prev) => prev + emoji);
+    }
     setShowEmojis(false);
   };
 
@@ -206,9 +209,36 @@ export default function Comments({ video }) {
                   value={editingText}
                   onChange={(e) => setEditingText(e.target.value)}
                 />
-                <button onClick={() => handleUpdate(c.id)}>Update</button>
-                <button onClick={() => setEditingCommentId(null)}>Cancel</button>
+                <div className="edit-actions">
+                  <button onClick={() => handleUpdate(c.id)}>Update</button>
+                  <button onClick={() => setEditingCommentId(null)}>Cancel</button>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setEmojiTarget("edit");
+                      setShowEmojis((prev) => (editingCommentId === c.id ? !prev : true));
+                    }}
+                    className="emoji-toggle"
+                  >
+                    🙂
+                  </button>
+                </div>
+
+                {showEmojis && emojiTarget === "edit" && editingCommentId === c.id && (
+                  <div className="emoji-picker">
+                    {emojis.map((emoji, i) => (
+                      <button
+                        key={i}
+                        type="button"
+                        onClick={() => addEmoji(emoji)}
+                      >
+                        {emoji}
+                      </button>
+                    ))}
+                  </div>
+                )}
               </>
+
             ) : (
               <p className="comment-text">{c.text}</p>
             )}
