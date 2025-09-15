@@ -317,4 +317,26 @@
     "$date": "2025-09-13T10:45:41.178Z"
   },
   "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68c8079f6ff1bfc82dcb4b67"
+  },
+  "videoId": "video02",
+  "userId": "68c7bb4b4057bf99c21c92c7",
+  "username": "abc",
+  "text": "this is my first comment😀",
+  "likes": [
+    {
+      "$oid": "68c7bb4b4057bf99c21c92c7"
+    }
+  ],
+  "dislikes": [],
+  "createdAt": {
+    "$date": "2025-09-15T12:33:35.434Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-15T12:33:39.516Z"
+  },
+  "__v": 1
 }]

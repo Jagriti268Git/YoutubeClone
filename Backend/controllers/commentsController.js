@@ -7,7 +7,7 @@ export const addComment = async(req, res) => {
             return res.status(401).json({ message: "Unauthorized" });
         }
 
-        const { videoId } = req.params; //get from URL
+        const { videoId } = req.params;
         const { text } = req.body;
 
         if (!videoId || !text) {
@@ -19,6 +19,8 @@ export const addComment = async(req, res) => {
             userId: req.user._id,
             username: req.user.name,
             text,
+            likes: [],
+            dislikes: [],
         });
 
         const savedComment = await comment.save();
@@ -75,6 +77,64 @@ export const deleteComment = async(req, res) => {
 
         await comment.deleteOne();
         res.json({ message: "Comment deleted successfully" });
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};
+
+export const likeComment = async(req, res) => {
+    try {
+        const { id } = req.params;
+        const userId = req.user._id;
+
+        const comment = await Comment.findById(id);
+        if (!comment) return res.status(404).json({ message: "Comment not found" });
+
+        // Remove from dislikes if present
+        comment.dislikes = comment.dislikes.filter(
+            (uid) => uid.toString() !== userId.toString()
+        );
+
+        // Toggle like
+        if (comment.likes.includes(userId)) {
+            comment.likes = comment.likes.filter(
+                (uid) => uid.toString() !== userId.toString()
+            );
+        } else {
+            comment.likes.push(userId);
+        }
+
+        await comment.save();
+        res.json(comment);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};
+
+export const dislikeComment = async(req, res) => {
+    try {
+        const { id } = req.params;
+        const userId = req.user._id;
+
+        const comment = await Comment.findById(id);
+        if (!comment) return res.status(404).json({ message: "Comment not found" });
+
+        // Remove from likes if present
+        comment.likes = comment.likes.filter(
+            (uid) => uid.toString() !== userId.toString()
+        );
+
+        // Toggle dislike
+        if (comment.dislikes.includes(userId)) {
+            comment.dislikes = comment.dislikes.filter(
+                (uid) => uid.toString() !== userId.toString()
+            );
+        } else {
+            comment.dislikes.push(userId);
+        }
+
+        await comment.save();
+        res.json(comment);
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
