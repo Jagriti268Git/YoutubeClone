@@ -1,0 +1,432 @@
+[{
+  "_id": {
+    "$oid": "68ad6ee6ac1dba7383ec4cfe"
+  },
+  "name": "Jagriti",
+  "handle": "@handle",
+  "profilePicture": "https://via.placeholder.com/150",
+  "user": {
+    "$oid": "68ad6caeac1dba7383ec4cf1"
+  },
+  "createdAt": {
+    "$date": "2025-08-26T08:23:02.917Z"
+  },
+  "updatedAt": {
+    "$date": "2025-08-26T08:23:02.917Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68ad70d28b1c88ec92361327"
+  },
+  "name": "Jagriti",
+  "handle": "@handlejag",
+  "profilePicture": "https://via.placeholder.com/150",
+  "user": {
+    "$oid": "68ad70b78b1c88ec92361320"
+  },
+  "createdAt": {
+    "$date": "2025-08-26T08:31:14.400Z"
+  },
+  "updatedAt": {
+    "$date": "2025-08-26T08:31:14.400Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68adbd7f8b1c88ec9236140b"
+  },
+  "name": "Jagriti Mishra",
+  "handle": "@handlejag123",
+  "profilePicture": "https://via.placeholder.com/150",
+  "user": {
+    "$oid": "68adbd4f8b1c88ec92361404"
+  },
+  "createdAt": {
+    "$date": "2025-08-26T13:58:23.253Z"
+  },
+  "updatedAt": {
+    "$date": "2025-08-26T13:58:23.253Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68adbe188b1c88ec92361418"
+  },
+  "name": "Jagriti",
+  "handle": "@handlejagriti",
+  "profilePicture": "/uploads/1756216856751-channel .png",
+  "user": {
+    "$oid": "68adbdec8b1c88ec92361411"
+  },
+  "createdAt": {
+    "$date": "2025-08-26T14:00:56.757Z"
+  },
+  "updatedAt": {
+    "$date": "2025-08-26T14:00:56.757Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68add88fafa19ea79638ab51"
+  },
+  "name": "Jagriti Mishra",
+  "handle": "@jaghandle",
+  "profilePicture": "https://via.placeholder.com/150",
+  "user": {
+    "$oid": "68add854afa19ea79638ab4c"
+  },
+  "createdAt": {
+    "$date": "2025-08-26T15:53:51.207Z"
+  },
+  "updatedAt": {
+    "$date": "2025-08-26T15:53:51.207Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68adf3fabf0c9df8d3623a25"
+  },
+  "name": "Jagriti",
+  "handle": "@jagriti",
+  "profilePicture": "https://via.placeholder.com/150",
+  "user": {
+    "$oid": "68adf3cebf0c9df8d3623a1b"
+  },
+  "createdAt": {
+    "$date": "2025-08-26T17:50:50.446Z"
+  },
+  "updatedAt": {
+    "$date": "2025-08-26T17:50:50.446Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68af2bab00bca548a2310491"
+  },
+  "name": "Jagriti",
+  "handle": "@jag",
+  "profilePicture": "https://via.placeholder.com/150",
+  "user": {
+    "$oid": "68af13699ec7fd26658f3bd5"
+  },
+  "createdAt": {
+    "$date": "2025-08-27T16:00:43.776Z"
+  },
+  "updatedAt": {
+    "$date": "2025-08-27T16:00:43.776Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68c13c35d29e1bc61197c980"
+  },
+  "name": "Jagriti Mishra",
+  "handle": "@jaghandle123",
+  "profilePicture": "https://via.placeholder.com/150",
+  "user": {
+    "$oid": "68c13c0ad29e1bc61197c979"
+  },
+  "createdAt": {
+    "$date": "2025-09-10T08:52:05.893Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-10T08:52:05.893Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68c2784e79ec6a3789739507"
+  },
+  "name": "jagriti",
+  "handle": "@jag123",
+  "profilePicture": "https://via.placeholder.com/150",
+  "user": {
+    "$oid": "68c2716b79ec6a37897394b6"
+  },
+  "createdAt": {
+    "$date": "2025-09-11T07:20:46.821Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-11T07:20:46.821Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68c278f479ec6a3789739529"
+  },
+  "name": "Jagriti Mishra26",
+  "handle": "@jagriti26",
+  "profilePicture": "https://via.placeholder.com/150",
+  "user": {
+    "$oid": "68c2787179ec6a378973950d"
+  },
+  "createdAt": {
+    "$date": "2025-09-11T07:23:32.321Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-11T07:23:32.321Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68c27c2779ec6a3789739541"
+  },
+  "name": "jagriti",
+  "handle": "@jagrit123",
+  "profilePicture": "https://via.placeholder.com/150",
+  "user": {
+    "$oid": "68c2787179ec6a378973950d"
+  },
+  "createdAt": {
+    "$date": "2025-09-11T07:37:11.764Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-11T07:37:11.764Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68c27dc979ec6a3789739580"
+  },
+  "name": "Jagriti",
+  "handle": "@j26handle",
+  "profilePicture": "https://via.placeholder.com/150",
+  "user": {
+    "$oid": "68c27db179ec6a378973957b"
+  },
+  "createdAt": {
+    "$date": "2025-09-11T07:44:09.813Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-11T07:44:09.813Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68c28dda79ec6a378973963b"
+  },
+  "name": "jagriti",
+  "handle": "@jhandle",
+  "profilePicture": "https://via.placeholder.com/150",
+  "user": {
+    "$oid": "68c27db179ec6a378973957b"
+  },
+  "createdAt": {
+    "$date": "2025-09-11T08:52:42.892Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-11T08:52:42.892Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68c2909a79ec6a378973965c"
+  },
+  "name": "Jag Mishra",
+  "handle": "@jaghandle26",
+  "profilePicture": "/uploads/1757581466324-userimg.png",
+  "user": {
+    "$oid": "68c28ea579ec6a3789739643"
+  },
+  "createdAt": {
+    "$date": "2025-09-11T09:04:26.336Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-11T09:04:26.336Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68c2917879ec6a3789739715"
+  },
+  "name": "jag",
+  "handle": "@jaghandle01",
+  "profilePicture": "https://via.placeholder.com/150",
+  "user": {
+    "$oid": "68c28ea579ec6a3789739643"
+  },
+  "createdAt": {
+    "$date": "2025-09-11T09:08:08.401Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-11T09:08:08.401Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68c2936e79ec6a3789739722"
+  },
+  "name": "Jagriti mishra",
+  "handle": "@jag123handle",
+  "profilePicture": "https://via.placeholder.com/150",
+  "user": {
+    "$oid": "68c28ea579ec6a3789739643"
+  },
+  "createdAt": {
+    "$date": "2025-09-11T09:16:30.757Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-11T09:16:30.757Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68c2971179ec6a3789739770"
+  },
+  "name": "jag",
+  "handle": "@jhandle2",
+  "profilePicture": "/uploads/1757583121810-userimg.png",
+  "user": {
+    "$oid": "68c28ea579ec6a3789739643"
+  },
+  "createdAt": {
+    "$date": "2025-09-11T09:32:01.815Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-11T09:32:01.815Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68c2993179ec6a3789739786"
+  },
+  "name": "Jagm",
+  "handle": "@jagritimish",
+  "profilePicture": "/uploads/1757583665061-beachThumb.webp",
+  "user": {
+    "$oid": "68c298e579ec6a3789739781"
+  },
+  "createdAt": {
+    "$date": "2025-09-11T09:41:05.066Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-11T09:41:05.066Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68c3db4309a899ebecbd285e"
+  },
+  "name": "JagritiMishra",
+  "handle": "@jaghandle268",
+  "profilePicture": "/uploads/1757666115473-userimg.png",
+  "user": {
+    "$oid": "68c3d80c09a899ebecbd2845"
+  },
+  "createdAt": {
+    "$date": "2025-09-12T08:35:15.478Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-12T08:35:15.478Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68c53cb84057bf99c21c908d"
+  },
+  "name": "jagriti",
+  "handle": "@jaghandle90",
+  "profilePicture": "https://via.placeholder.com/150",
+  "user": {
+    "$oid": "68c53c474057bf99c21c9081"
+  },
+  "createdAt": {
+    "$date": "2025-09-13T09:43:20.201Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-13T09:43:20.201Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68c5417c4057bf99c21c90c0"
+  },
+  "name": "jagriti",
+  "handle": "@j268mish",
+  "profilePicture": "/uploads/1757757820558-userimg.png",
+  "user": {
+    "$oid": "68c5412b4057bf99c21c90b7"
+  },
+  "createdAt": {
+    "$date": "2025-09-13T10:03:40.567Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-13T10:03:40.567Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68c548ab4057bf99c21c9101"
+  },
+  "name": "Jagriti Mishra",
+  "handle": "@jagriti2",
+  "profilePicture": "/uploads/1757759659126-userimg.png",
+  "user": {
+    "$oid": "68c5483c4057bf99c21c90f8"
+  },
+  "createdAt": {
+    "$date": "2025-09-13T10:34:19.131Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-13T10:34:19.131Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68c54aea4057bf99c21c9132"
+  },
+  "name": "Jagriti Mishra",
+  "handle": "@jagritimishra",
+  "profilePicture": "/uploads/1757760234969-userimg.png",
+  "user": {
+    "$oid": "68c54aba4057bf99c21c912d"
+  },
+  "createdAt": {
+    "$date": "2025-09-13T10:43:54.976Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-13T10:43:54.976Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68c7bb734057bf99c21c92cc"
+  },
+  "name": "abc",
+  "handle": "@handleabc",
+  "profilePicture": "https://via.placeholder.com/150",
+  "user": {
+    "$oid": "68c7bb4b4057bf99c21c92c7"
+  },
+  "createdAt": {
+    "$date": "2025-09-15T07:08:35.052Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-15T07:08:35.052Z"
+  },
+  "__v": 0
+}]

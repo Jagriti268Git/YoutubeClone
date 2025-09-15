@@ -12,7 +12,7 @@ export default function Comments({ video }) {
   const [editingCommentId, setEditingCommentId] = useState(null);
   const [editingText, setEditingText] = useState("");
   const [showEmojis, setShowEmojis] = useState(false); // Emoji picker toggle
-
+  const [emojiTarget, setEmojiTarget] = useState(null);
   const token = localStorage.getItem("token");
 
   // Fetch comments
@@ -24,26 +24,32 @@ export default function Comments({ video }) {
         const res = await axios.get(
           `http://localhost:5000/api/comments/${video.id}`
         );
-        const commentsWithLikes = res.data.map((c) => ({
+
+        // Map backend comments to state with likes/dislikes counts
+        const commentsFromServer = res.data.map((c) => ({
           ...c,
           id: c._id,
-          likes: Math.floor(Math.random() * 50),
-          dislikes: Math.floor(Math.random() * 20),
-          liked: false,
-          disliked: false,
+          likes: c.likes ? c.likes.length : 0,
+          dislikes: c.dislikes ? c.dislikes.length : 0,
+          liked: c.likes ? c.likes.includes(token) : false,
+          disliked: c.dislikes ? c.dislikes.includes(token) : false,
         }));
-        setComments(commentsWithLikes);
+
+        setComments(commentsFromServer);
       } catch (err) {
         console.error(err);
       }
     };
 
     fetchComments();
-  }, [video]);
+  }, [video, token]);
 
-  // Add emoji to comment
   const addEmoji = (emoji) => {
-    setNewComment((prev) => prev + emoji);
+    if (emojiTarget === "new") {
+      setNewComment((prev) => prev + emoji);
+    } else if (emojiTarget === "edit") {
+      setEditingText((prev) => prev + emoji);
+    }
     setShowEmojis(false);
   };
 
@@ -56,62 +62,65 @@ export default function Comments({ video }) {
         { text: newComment },
         { headers: { Authorization: `Bearer ${token}` } }
       );
-      const commentWithLikes = {
+
+      // res.data is a single object, not an array
+      const comment = {
         ...res.data,
         id: res.data._id,
-        likes: Math.floor(Math.random() * 50),
-        dislikes: Math.floor(Math.random() * 20),
-        liked: false,
-        disliked: false,
+        likes: res.data.likes ? res.data.likes.length : 0,
+        dislikes: res.data.dislikes ? res.data.dislikes.length : 0,
+        liked: res.data.likes ? res.data.likes.includes(token) : false,
+        disliked: res.data.dislikes ? res.data.dislikes.includes(token) : false,
       };
-      setComments([commentWithLikes, ...comments]);
-      setNewComment("");
+
+      setComments([comment, ...comments]); // prepend to list
+      setNewComment(""); // clear input
     } catch (err) {
       console.error(err);
       alert(err.response?.data?.message || "Failed to post comment");
     }
   };
 
-  // Like / Dislike
-  const handleLike = (id) => {
-    setComments((prev) =>
-      prev.map((c) => {
-        if (c.id === id) {
-          let { likes, dislikes, liked, disliked } = c;
-          if (liked) likes -= 1;
-          else {
-            likes += 1;
-            if (disliked) {
-              dislikes -= 1;
-              disliked = false;
-            }
-          }
-          return { ...c, likes, dislikes, liked: !liked, disliked };
-        }
-        return c;
-      })
-    );
-  };
+  // // Like / Dislike
+  // const handleLike = (id) => {
+  //   setComments((prev) =>
+  //     prev.map((c) => {
+  //       if (c.id === id) {
+  //         let { likes, dislikes, liked, disliked } = c;
+  //         if (liked) likes -= 1;
+  //         else {
+  //           likes += 1;
+  //           if (disliked) {
+  //             dislikes -= 1;
+  //             disliked = false;
+  //           }
+  //         }
+  //         return { ...c, likes, dislikes, liked: !liked, disliked };
+  //       }
+  //       return c;
+  //     })
+  //   );
+  // };
 
-  const handleDislike = (id) => {
-    setComments((prev) =>
-      prev.map((c) => {
-        if (c.id === id) {
-          let { likes, dislikes, liked, disliked } = c;
-          if (disliked) dislikes -= 1;
-          else {
-            dislikes += 1;
-            if (liked) {
-              likes -= 1;
-              liked = false;
-            }
-          }
-          return { ...c, likes, dislikes, liked, disliked: !disliked };
-        }
-        return c;
-      })
-    );
-  };
+  // const handleDislike = (id) => {
+  //   setComments((prev) =>
+  //     prev.map((c) => {
+  //       if (c.id === id) {
+  //         let { likes, dislikes, liked, disliked } = c;
+  //         if (disliked) dislikes -= 1;
+  //         else {
+  //           dislikes += 1;
+  //           if (liked) {
+  //             likes -= 1;
+  //             liked = false;
+  //           }
+  //         }
+  //         return { ...c, likes, dislikes, liked, disliked: !disliked };
+  //       }
+  //       return c;
+  //     })
+  //   );
+  // };
 
   // Edit comment
   const handleEdit = (id, text) => {
@@ -151,6 +160,63 @@ export default function Comments({ video }) {
     }
   };
 
+  // Like comment
+  const handleLike = async (id) => {
+    try {
+      const res = await axios.put(
+        `http://localhost:5000/api/comments/${id}/like`,
+        {},
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+      // Update local state with response from server
+      setComments((prev) =>
+        prev.map((c) =>
+          c.id === id
+            ? {
+              ...c,
+              likes: res.data.likes.length,
+              dislikes: res.data.dislikes.length,
+              liked: res.data.likes.includes(token), // optional, if you store user id locally
+              disliked: res.data.dislikes.includes(token),
+            }
+            : c
+        )
+      );
+    } catch (err) {
+      console.error(err);
+      alert(err.response?.data?.message || "Failed to like comment");
+    }
+  };
+
+  // Dislike comment
+  const handleDislike = async (id) => {
+    try {
+      const res = await axios.put(
+        `http://localhost:5000/api/comments/${id}/dislike`,
+        {},
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+      // Update local state with response from server
+      setComments((prev) =>
+        prev.map((c) =>
+          c.id === id
+            ? {
+              ...c,
+              likes: res.data.likes.length,
+              dislikes: res.data.dislikes.length,
+              liked: res.data.likes.includes(token),
+              disliked: res.data.dislikes.includes(token),
+            }
+            : c
+        )
+      );
+    } catch (err) {
+      console.error(err);
+      alert(err.response?.data?.message || "Failed to dislike comment");
+    }
+  };
+
+
   return (
     <div className="comments-section">
       <h3>{comments.length} Comments</h3>
@@ -165,16 +231,19 @@ export default function Comments({ video }) {
         <button onClick={handlePost}>Comment</button>
         <button
           type="button"
-          onClick={() => setShowEmojis((prev) => !prev)}
+          onClick={() => {
+            setEmojiTarget("new");          // <-- tell it this is the main comment input
+            setShowEmojis((prev) => !prev); // toggle visibility
+          }}
           className="emoji-toggle"
         >
           🙂
         </button>
 
-        {showEmojis && (
+        {showEmojis && emojiTarget === "new" && (
           <div className="emoji-picker">
             {emojis.map((emoji, i) => (
-              <button id="emojiPickerId"
+              <button
                 key={i}
                 type="button"
                 onClick={() => addEmoji(emoji)}
@@ -206,9 +275,36 @@ export default function Comments({ video }) {
                   value={editingText}
                   onChange={(e) => setEditingText(e.target.value)}
                 />
-                <button onClick={() => handleUpdate(c.id)}>Update</button>
-                <button onClick={() => setEditingCommentId(null)}>Cancel</button>
+                <div className="edit-actions">
+                  <button onClick={() => handleUpdate(c.id)}>Update</button>
+                  <button onClick={() => setEditingCommentId(null)}>Cancel</button>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setEmojiTarget("edit");
+                      setShowEmojis((prev) => (editingCommentId === c.id ? !prev : true));
+                    }}
+                    className="emoji-toggle"
+                  >
+                    🙂
+                  </button>
+                </div>
+
+                {showEmojis && emojiTarget === "edit" && editingCommentId === c.id && (
+                  <div className="emoji-picker">
+                    {emojis.map((emoji, i) => (
+                      <button
+                        key={i}
+                        type="button"
+                        onClick={() => addEmoji(emoji)}
+                      >
+                        {emoji}
+                      </button>
+                    ))}
+                  </div>
+                )}
               </>
+
             ) : (
               <p className="comment-text">{c.text}</p>
             )}
