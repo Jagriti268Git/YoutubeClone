@@ -10,7 +10,7 @@
 
 * After unzipping the file
  
-* cd Frontend && npm install
+* cd Frontend && npm install or npm install --legacy-peer-deps
  
 * cd ../Backend && npm install
 
