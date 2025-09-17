@@ -1,3 +1,11 @@
+# Ignore hidden IDE/OS files
+.lh/
+.ih/
+*.lh
+*.ih
+
+# Ignore uploads folder (if you don’t want to commit user-uploaded files)
+Backend/uploads/
 # Logs
 logs
 *.log

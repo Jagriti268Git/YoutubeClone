@@ -15,6 +15,7 @@ export default function Comments({ video }) {
   const [emojiTarget, setEmojiTarget] = useState(null);
   const token = localStorage.getItem("token");
 
+
   // Fetch comments
   useEffect(() => {
     if (!video || !video.id) return;
@@ -149,6 +150,8 @@ export default function Comments({ video }) {
 
   // Delete comment
   const handleDelete = async (id) => {
+    const confirmed = window.confirm("Are you sure you want to delete this comment?");
+    if (!confirmed) return;
     try {
       await axios.delete(`http://localhost:5000/api/comments/${id}`, {
         headers: { Authorization: `Bearer ${token}` },

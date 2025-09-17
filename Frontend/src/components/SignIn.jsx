@@ -39,21 +39,23 @@ export default function SignIn() {
       const data = await response.json();
 
       if (isSignUp) {
-        // Registration Success like YouTube
-        //   setMessage("Your account has been created. Please sign in.");
         toast.success(" Account created! Please sign in.");
-        setIsSignUp(false); // switch to login form
+        setIsSignUp(false);
       } else {
-        //  Sign in success
-        localStorage.setItem("token", data.token);
-        localStorage.setItem("user", JSON.stringify({ name: data.name, email: data.email }));
+        const token = data.token;
+
+        // Save in sessionStorage by default
+        sessionStorage.setItem("token", token);
+
+        // Optionally in localStorage if "Remember me" is added
+        // localStorage.setItem("token", token);
+
         toast.success(" Signed in successfully!");
         navigate("/");
       }
     } catch (err) {
-      console.error("Server Error:", err);
-      //  setMessage("Something went wrong. Try again.");
-      toast.error(" Something went wrong. Try again.");
+      console.error(" Server Error:", err);
+      toast.error("Something went wrong. Try again.");
     }
   };
 
