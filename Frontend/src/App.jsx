@@ -14,6 +14,34 @@ export default function App() {
   const [allVideos, setAllVideos] = useState(() =>
     videosData.map(normalizeVideo)
   );
+  const [user, setUser] = useState(null);
+  useEffect(() => {
+    const token =
+      sessionStorage.getItem("token") || localStorage.getItem("token");
+
+    if (token) {
+      axios
+        .get("http://localhost:5000/api/auth/verify", {
+          headers: { Authorization: `Bearer ${token}` },
+        })
+        .then((res) => {
+          if (res.data.valid) {
+            setUser(res.data.user); // backend returns user
+          } else {
+            sessionStorage.removeItem("token");
+            localStorage.removeItem("token");
+            setUser(null);
+          }
+        })
+        .catch(() => {
+          sessionStorage.removeItem("token");
+          localStorage.removeItem("token");
+          setUser(null);
+        });
+    }
+  }, []);
+
+
 
   useEffect(() => {
     const fetchVideos = async () => {
@@ -33,6 +61,7 @@ export default function App() {
   }, []);
 
   console.log("All videos being passed down:", allVideos);
+  console.log("Current user:", user);
 
   return (
     <Routes>
