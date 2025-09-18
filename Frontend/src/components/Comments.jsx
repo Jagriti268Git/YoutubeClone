@@ -16,7 +16,7 @@ export default function Comments({ video }) {
   const token = sessionStorage.getItem("token");
 
 
-  // Fetch comments
+  // Fetched comments
   useEffect(() => {
     if (!video || !video.id) return;
 
@@ -74,8 +74,8 @@ export default function Comments({ video }) {
         disliked: res.data.dislikes ? res.data.dislikes.includes(token) : false,
       };
 
-      setComments([comment, ...comments]); // prepend to list
-      setNewComment(""); // clear input
+      setComments([comment, ...comments]);
+      setNewComment("");
     } catch (err) {
       console.error(err);
       alert(err.response?.data?.message || "Failed to post comment");
@@ -171,7 +171,7 @@ export default function Comments({ video }) {
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );
-      // Update local state with response from server
+
       setComments((prev) =>
         prev.map((c) =>
           c.id === id
@@ -179,7 +179,7 @@ export default function Comments({ video }) {
               ...c,
               likes: res.data.likes.length,
               dislikes: res.data.dislikes.length,
-              liked: res.data.likes.includes(token), // optional, if you store user id locally
+              liked: res.data.likes.includes(token),
               disliked: res.data.dislikes.includes(token),
             }
             : c
@@ -199,7 +199,7 @@ export default function Comments({ video }) {
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );
-      // Update local state with response from server
+
       setComments((prev) =>
         prev.map((c) =>
           c.id === id
@@ -235,8 +235,8 @@ export default function Comments({ video }) {
         <button
           type="button"
           onClick={() => {
-            setEmojiTarget("new");          // <-- tell it this is the main comment input
-            setShowEmojis((prev) => !prev); // toggle visibility
+            setEmojiTarget("new");
+            setShowEmojis((prev) => !prev);
           }}
           className="emoji-toggle"
         >

@@ -22,10 +22,10 @@ export default function Channel() {
   const [editingVideo, setEditingVideo] = useState(null);
 
   function formatNumber(num) {
-    if (num === undefined || num === null) return "0"; // ✅ fallback
+    if (num === undefined || num === null) return "0"; // fallback
     return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
-  // Load channel from localStorage
+  // Loaded channel from localStorage
   useEffect(() => {
     const savedChannel = localStorage.getItem("channel");
     if (savedChannel) {
@@ -58,7 +58,7 @@ export default function Channel() {
     }
   }, [handle, channel]);
 
-  // Fetch videos for this channel
+  // Fetched videos for this channel
   useEffect(() => {
     if (!channel?._id) return;
 
@@ -80,7 +80,7 @@ export default function Channel() {
     fetchVideos();
   }, [channel]);
 
-  // Add or update video after upload
+  // Added or updated video after upload
   const handleVideoUploaded = (video) => {
     setVideos((prev) => {
       const exists = prev.find((v) => v._id === video._id);
@@ -88,7 +88,7 @@ export default function Channel() {
     });
   };
 
-  // Delete video
+  // Deleted video
   const handleDeleteVideo = async (id) => {
     try {
       await axios.delete(`http://localhost:5000/api/videos/${id}`);
@@ -128,7 +128,7 @@ export default function Channel() {
               <div className="channel-avatar-wrapper">
                 {channel.profilePicture ? (
                   <img
-                    key={channel.profilePicture} // force re-render when updated
+                    key={channel.profilePicture} // forced re-render when updated
                     src={
                       channel.profilePicture.startsWith("http")
                         ? channel.profilePicture

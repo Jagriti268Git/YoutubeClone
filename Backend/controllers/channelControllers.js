@@ -15,7 +15,7 @@ export const createChannel = async(req, res) => {
         name = name.trim();
         handle = handle.toLowerCase().trim();
 
-        // Check for duplicate handle
+        // Checked for duplicate handle
         const existing = await Channel.findOne({ handle });
         if (existing) {
             return res.status(400).json({ message: "Handle already exists" });
