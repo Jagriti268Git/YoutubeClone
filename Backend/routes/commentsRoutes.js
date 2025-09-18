@@ -23,10 +23,10 @@ router.put("/:id", protect, updateComment);
 // Delete a comment (only owner)
 router.delete("/:id", protect, deleteComment);
 
-// 👍 Like a comment
+//  Like a comment
 router.put("/:id/like", protect, likeComment);
 
-// 👎 Dislike a comment
+//  Dislike a comment
 router.put("/:id/dislike", protect, dislikeComment);
 
 export default router;

@@ -3,6 +3,7 @@ import Channel from "../models/channel.js";
 import path from "path";
 import fs from "fs";
 
+//Post video
 export const createVideo = async(req, res) => {
     try {
         const { title, description, audience, tags, category } = req.body;
@@ -110,7 +111,7 @@ export const likeVideo = async(req, res) => {
         const video = await Video.findById(id);
         if (!video) return res.status(404).json({ message: "Video not found" });
 
-        // Remove from dislikes if present
+        // Removed from dislikes if present
         video.dislikes = video.dislikes.filter(uid => uid.toString() !== userId.toString());
 
         // Toggle like
@@ -137,7 +138,7 @@ export const dislikeVideo = async(req, res) => {
         const video = await Video.findById(id);
         if (!video) return res.status(404).json({ message: "Video not found" });
 
-        // Remove from likes if present
+        // Removed from likes if present
         video.likes = video.likes.filter(uid => uid.toString() !== userId.toString());
 
         // Toggle dislike

@@ -82,10 +82,10 @@ export default function VideoPlayer({ videos }) {
 
   // Like handler
   const handleLike = async () => {
-    const videoId = videoState._id || videoState.id; // use _id if exists, else id
+    const videoId = videoState._id || videoState.id;
     if (!videoId) return;
 
-    const user = localStorage.getItem("user"); // replace with actual auth user ID
+    const user = localStorage.getItem("user");
     const userId = JSON.parse(user)._id;
     console.log("userId", userId);
     let updatedVideo = { ...videoState };
@@ -98,16 +98,16 @@ export default function VideoPlayer({ videos }) {
       updatedVideo.dislikes = (videoState.dislikes || []).filter(uid => uid !== userId);
     }
 
-    setVideoState(updatedVideo); // optimistic UI
+    setVideoState(updatedVideo);
 
     try {
       await axios.put(`http://localhost:5000/api/videos/like/${videoId}`, {}, {
-        headers: { Authorization: `Bearer ${sessionStorage.getItem("token")}` } // if using auth token
+        headers: { Authorization: `Bearer ${sessionStorage.getItem("token")}` }
       });
     } catch (err) {
       console.error("Like error:", err);
       toast.error("Failed to like video");
-      setVideoState(videoState); // rollback
+      setVideoState(videoState);
     }
   };
 
@@ -128,7 +128,7 @@ export default function VideoPlayer({ videos }) {
       updatedVideo.likes = (videoState.likes || []).filter(uid => uid !== userId);
     }
 
-    setVideoState(updatedVideo); // optimistic UI
+    setVideoState(updatedVideo);
 
     try {
       await axios.put(`http://localhost:5000/api/videos/dislike/${videoId}`, {}, {
@@ -137,7 +137,7 @@ export default function VideoPlayer({ videos }) {
     } catch (err) {
       console.error("Dislike error:", err);
       toast.error("Failed to dislike video");
-      setVideoState(videoState); // rollback
+      setVideoState(videoState);
     }
   };
 
