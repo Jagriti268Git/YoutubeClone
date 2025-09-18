@@ -14,6 +14,8 @@
  
 * cd ../Backend && npm install
 
+* run command -  (node seed.js) before running the main app (Index.js) in Backend.
+
 ## Features
 
  * Video playback (like YouTube watch page)
