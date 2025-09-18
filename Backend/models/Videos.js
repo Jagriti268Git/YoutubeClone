@@ -10,7 +10,10 @@ const videoSchema = new mongoose.Schema({
     uploader: { type: String, required: true },
     category: { type: String, default: "General" },
     audience: { type: String, enum: ["notKids", "kids"], default: "notKids" },
+    likes: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
+    dislikes: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
     createdAt: { type: Date, default: Date.now },
 });
 
-export default mongoose.model("Video", videoSchema, "Video");
+const Video = mongoose.model("Video", videoSchema, "Video");
+export default Video;

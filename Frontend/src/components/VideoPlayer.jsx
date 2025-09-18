@@ -14,7 +14,8 @@ import { formatNumber } from "../utility/formatNumber";
 import { timeAgo } from "../utility/timeAgo";
 import "../VideoPlayer.css";
 import { useNavigate } from "react-router-dom";
-
+import axios from "axios";
+import { toast } from "react-toastify";
 export default function VideoPlayer({ videos }) {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -22,7 +23,8 @@ export default function VideoPlayer({ videos }) {
   const [loading, setLoading] = useState(!videos?.length);
   const [searchTerm, setSearchTerm] = useState("");
   const [sidebarOpen, setSidebarOpen] = useState(false);
-
+  const [likes, setLikes] = useState(videos.likes || []);
+  const [dislikes, setDislikes] = useState(videos.dislikes || []);
 
   const isLocalVideo = (url) => {
     if (!url) return false;
@@ -73,6 +75,71 @@ export default function VideoPlayer({ videos }) {
 
   if (loading) return <p>Loading videos...</p>;
   if (!video) return <h2>Video not found</h2>;
+  const token = sessionStorage.getItem("token"); // or localStorage
+
+  // const { id } = useParams();
+  const [videoState, setVideoState] = useState(video);
+
+  // Like handler
+  const handleLike = async () => {
+    const videoId = videoState._id || videoState.id; // use _id if exists, else id
+    if (!videoId) return;
+
+    const user = localStorage.getItem("user"); // replace with actual auth user ID
+    const userId = JSON.parse(user)._id;
+    console.log("userId", userId);
+    let updatedVideo = { ...videoState };
+
+    // Toggle like
+    if (videoState.likes?.includes(userId)) {
+      updatedVideo.likes = videoState.likes.filter(uid => uid !== userId);
+    } else {
+      updatedVideo.likes = [...(videoState.likes || []), userId];
+      updatedVideo.dislikes = (videoState.dislikes || []).filter(uid => uid !== userId);
+    }
+
+    setVideoState(updatedVideo); // optimistic UI
+
+    try {
+      await axios.put(`http://localhost:5000/api/videos/like/${videoId}`, {}, {
+        headers: { Authorization: `Bearer ${sessionStorage.getItem("token")}` } // if using auth token
+      });
+    } catch (err) {
+      console.error("Like error:", err);
+      toast.error("Failed to like video");
+      setVideoState(videoState); // rollback
+    }
+  };
+
+  // Dislike handler
+  const handleDislike = async () => {
+    const videoId = videoState._id || videoState.id;
+    if (!videoId) return;
+
+    const userId = sessionStorage.getItem("userId");
+
+    let updatedVideo = { ...videoState };
+
+    // Toggle dislike
+    if (videoState.dislikes?.includes(userId)) {
+      updatedVideo.dislikes = videoState.dislikes.filter(uid => uid !== userId);
+    } else {
+      updatedVideo.dislikes = [...(videoState.dislikes || []), userId];
+      updatedVideo.likes = (videoState.likes || []).filter(uid => uid !== userId);
+    }
+
+    setVideoState(updatedVideo); // optimistic UI
+
+    try {
+      await axios.put(`http://localhost:5000/api/videos/dislike/${videoId}`, {}, {
+        headers: { Authorization: `Bearer ${sessionStorage.getItem("token")}` }
+      });
+    } catch (err) {
+      console.error("Dislike error:", err);
+      toast.error("Failed to dislike video");
+      setVideoState(videoState); // rollback
+    }
+  };
 
   return (
     <div className="video-page">
@@ -220,8 +287,12 @@ export default function VideoPlayer({ videos }) {
                 </div>
                 <button className="subscribe-btn">Subscribe</button>
                 <div className="actions">
-                  <button><AiOutlineLike size={20} />{formatNumber(video.likes)}</button>
-                  <button><AiOutlineDislike size={20} /> {formatNumber(video.dislikes)}</button>
+                  <button onClick={handleLike}>
+                    <AiOutlineLike size={20} /> {videoState?.likes?.length || 0}
+                  </button>
+                  <button onClick={handleDislike}>
+                    <AiOutlineDislike size={20} /> {videoState?.dislikes?.length || 0}
+                  </button>
                   <button><AiOutlineShareAlt size={20} /> Share</button>
                   <button><AiOutlineDownload size={20} /> Download</button>
                 </div>

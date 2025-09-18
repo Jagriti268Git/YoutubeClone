@@ -51,3 +51,17 @@ export const getChannelByHandle = async(req, res) => {
         res.status(500).json({ message: error.message });
     }
 };
+
+// @route GET /api/channels/byUser/:userId
+export const getChannelByUserId = async(req, res) => {
+    try {
+        const channel = await Channel.findOne({ user: req.params.userId });
+        if (!channel) {
+            return res.status(404).json({ message: "Channel not found" });
+        }
+        res.json(channel);
+    } catch (error) {
+        console.error("Error fetching channel by userId:", error);
+        res.status(500).json({ message: error.message });
+    }
+};

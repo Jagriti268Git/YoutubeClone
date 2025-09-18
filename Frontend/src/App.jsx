@@ -26,16 +26,19 @@ export default function App() {
         })
         .then((res) => {
           if (res.data.valid) {
-            setUser(res.data.user); // backend returns user
+            setUser(res.data.user);
+            localStorage.setItem("user", JSON.stringify(res.data.user));
           } else {
             sessionStorage.removeItem("token");
             localStorage.removeItem("token");
+            localStorage.removeItem("user");
             setUser(null);
           }
         })
         .catch(() => {
           sessionStorage.removeItem("token");
           localStorage.removeItem("token");
+          localStorage.removeItem("user");
           setUser(null);
         });
     }
@@ -66,9 +69,9 @@ export default function App() {
   return (
     <Routes>
       {/*  passed videos as-is */}
-      <Route path="/" element={<Home videos={allVideos} />} />
-      <Route path="/watch/:id" element={<VideoPlayer videos={allVideos} />} />
-      <Route path="/signin" element={<SignIn />} />
+      <Route path="/" element={<Home videos={allVideos} user={user} />} />
+      <Route path="/watch/:id" element={<VideoPlayer videos={allVideos} user={user} />} />
+      <Route path="/signin" element={<SignIn setUser={setUser} />} />
       <Route path="/channel/:handle" element={<Channel />} />
     </Routes>
   );

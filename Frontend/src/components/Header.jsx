@@ -30,9 +30,38 @@ export default function Header({
   const navigate = useNavigate();
 
   const [user, setUser] = useState(() => {
-    const stored = localStorage.getItem("user");
-    return stored ? JSON.parse(stored) : null;
+    try {
+      const stored = localStorage.getItem("user");
+      if (!stored || stored === "undefined") return null;
+      return JSON.parse(stored);
+    } catch (err) {
+      console.error("Invalid user in localStorage:", err);
+      return null;
+    }
   });
+  useEffect(() => {
+    if (!user?._id) return;
+
+    const fetchChannel = async () => {
+      try {
+        const res = await axios.get(`http://localhost:5000/api/channels/byUser/${user._id}`);
+        if (res.status === 200 && res.data) {
+          setChannel(res.data);
+
+          const updatedUser = { ...user, handle: res.data.handle };
+          setUser(updatedUser);
+          localStorage.setItem("user", JSON.stringify(updatedUser));
+          localStorage.setItem("channel", JSON.stringify(res.data));
+        }
+      } catch (err) {
+        console.error("Error fetching channel:", err);
+        setChannel(null);
+        localStorage.removeItem("channel");
+      }
+    };
+
+    fetchChannel();
+  }, [user?._id]);
 
   //  user in sync with localStorage (optional if you update it elsewhere)
   useEffect(() => {

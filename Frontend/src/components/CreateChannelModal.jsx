@@ -14,7 +14,9 @@ export default function CreateChannelModal({ isOpen, onClose, onChannelCreated }
   const [error, setError] = useState("");
 
   const navigate = useNavigate();
-  const token = localStorage.getItem("token");
+  // const token = localStorage.getItem("token");
+  // console.log("Token being sent:", token);
+  const token = sessionStorage.getItem("token");
   if (!isOpen) return null;
 
   const handlePictureUpload = (e) => {
@@ -38,10 +40,10 @@ export default function CreateChannelModal({ isOpen, onClose, onChannelCreated }
         headers: {
           "Authorization": `Bearer ${token}`,
           "Content-Type": "multipart/form-data",
-        },
 
+        }
       });
-
+      console.log("Token being sent:", token);
       const newChannel = res.data;
       console.log("Created channel:", newChannel);
 

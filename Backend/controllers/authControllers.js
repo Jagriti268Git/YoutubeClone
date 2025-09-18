@@ -3,7 +3,7 @@ import jwt from 'jsonwebtoken';
 
 // Generate JWT token 
 const generateToken = (id) => {
-    return jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: "12h" });
+    return jwt.sign({ userId: id }, process.env.JWT_SECRET, { expiresIn: "12h" });
 };
 
 // Register user
@@ -22,10 +22,12 @@ export const registerUser = async(req, res) => {
         console.log(" User created:", user);
 
         res.status(201).json({
-            _id: user._id,
-            name: user.name,
-            email: user.email,
-            token: generateToken(user._id) // no password here
+            token: generateToken(user._id),
+            user: {
+                _id: user._id,
+                name: user.name,
+                email: user.email
+            }
         });
     } catch (err) {
         console.error(" Error creating user:", err.message);
@@ -42,10 +44,12 @@ export const loginUser = async(req, res) => {
         const user = await User.findOne({ email });
         if (user && (await user.matchPassword(password))) {
             res.json({
-                _id: user._id,
-                name: user.name,
-                email: user.email,
-                token: generateToken(user._id) // no password here
+                token: generateToken(user._id),
+                user: {
+                    _id: user._id,
+                    name: user.name,
+                    email: user.email
+                }
             });
         } else {
             res.status(401).json({ message: "Invalid email or password" });
@@ -68,7 +72,7 @@ export const verifyUser = (req, res) => {
         if (err) return res.status(403).json({ valid: false, message: "Invalid token" });
 
         try {
-            const user = await User.findById(decoded.id).select("-password");
+            const user = await User.findById(decoded.userId).select("-password"); // ✅ fix here
             if (!user) return res.status(404).json({ valid: false, message: "User not found" });
 
             res.json({ valid: true, user });

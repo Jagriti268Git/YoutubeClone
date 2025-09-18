@@ -4,7 +4,7 @@ import "../signin.css";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
-export default function SignIn() {
+export default function SignIn({ setUser }) {
   const [isSignUp, setIsSignUp] = useState(false);
   const [formData, setFormData] = useState({ name: "", email: "", password: "" });
   const [message, setMessage] = useState("");
@@ -42,13 +42,16 @@ export default function SignIn() {
         toast.success(" Account created! Please sign in.");
         setIsSignUp(false);
       } else {
-        const token = data.token;
+        const { token, user } = data;
 
-        // Save in sessionStorage by default
+        // Saved token
         sessionStorage.setItem("token", token);
 
-        // Optionally in localStorage if "Remember me" is added
-        // localStorage.setItem("token", token);
+        // Saved user in localStorage too
+        localStorage.setItem("user", JSON.stringify(user));
+
+        // Updated state in App immediately
+        setUser(user);
 
         toast.success(" Signed in successfully!");
         navigate("/");
@@ -58,6 +61,7 @@ export default function SignIn() {
       toast.error("Something went wrong. Try again.");
     }
   };
+
 
   return (
     <div className="signin-container">
