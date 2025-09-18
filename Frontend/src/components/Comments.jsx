@@ -13,7 +13,7 @@ export default function Comments({ video }) {
   const [editingText, setEditingText] = useState("");
   const [showEmojis, setShowEmojis] = useState(false); // Emoji picker toggle
   const [emojiTarget, setEmojiTarget] = useState(null);
-  const token = localStorage.getItem("token");
+  const token = sessionStorage.getItem("token");
 
 
   // Fetch comments

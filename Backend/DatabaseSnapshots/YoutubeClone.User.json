@@ -1,330 +1,60 @@
 [{
   "_id": {
-    "$oid": "68ad6caeac1dba7383ec4cf1"
+    "$oid": "68cb0f90f503901eb68433c7"
   },
-  "name": "Jagriti ",
-  "email": "j@gmail.com",
-  "password": "$2b$10$3cwGBnkpzqnfqRl.mrGmIOocfxFjyhFivNZZHjY1aHpe8d3qZ/AeK",
+  "name": "Alice",
+  "email": "alice@example.com",
+  "password": "$2b$10$jaStyWMVQW4x6SQncZi5UerUdnI5KE/6O/7H6uQBUBFyqQhBwLflG",
+  "__v": 0,
   "createdAt": {
-    "$date": "2025-08-26T08:13:34.042Z"
+    "$date": "2025-09-17T19:44:16.707Z"
   },
   "updatedAt": {
-    "$date": "2025-08-26T08:13:34.042Z"
-  },
-  "__v": 0
+    "$date": "2025-09-17T19:44:16.707Z"
+  }
 },
 {
   "_id": {
-    "$oid": "68ad70b78b1c88ec92361320"
+    "$oid": "68cb0f90f503901eb68433c8"
   },
-  "name": "Jagritim",
-  "email": "jag@gmail.com",
-  "password": "$2b$10$DzWtJ0yyB9B0HYFYIk7Gne/IIGavi5AWf4hqHTownEn7rTRDc0qq6",
+  "name": "Bob",
+  "email": "bob@example.com",
+  "password": "$2b$10$jaStyWMVQW4x6SQncZi5UerUdnI5KE/6O/7H6uQBUBFyqQhBwLflG",
+  "__v": 0,
   "createdAt": {
-    "$date": "2025-08-26T08:30:47.793Z"
+    "$date": "2025-09-17T19:44:16.708Z"
   },
   "updatedAt": {
-    "$date": "2025-08-26T08:30:47.793Z"
-  },
-  "__v": 0
+    "$date": "2025-09-17T19:44:16.708Z"
+  }
 },
 {
   "_id": {
-    "$oid": "68adbd4f8b1c88ec92361404"
+    "$oid": "68cbc0d58ee315339dd30e04"
   },
-  "name": "jagriti mishra",
-  "email": "jag26@gmail.com",
-  "password": "$2b$10$IYsWiN9ITULXFBF1XTJTYOkdaj8Dy6pyr.SuVLcZDfoNcR4umQxUS",
-  "createdAt": {
-    "$date": "2025-08-26T13:57:35.202Z"
-  },
-  "updatedAt": {
-    "$date": "2025-08-26T13:57:35.202Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "68adbdec8b1c88ec92361411"
-  },
-  "name": "Jagriti Mishra",
-  "email": "jag268@gmail.com",
-  "password": "$2b$10$dRip.kcdIhVTtP6LAFIfYOF6R2QxSeNhPjQkC6E5dJ4Wn0OA04v0i",
-  "createdAt": {
-    "$date": "2025-08-26T14:00:12.720Z"
-  },
-  "updatedAt": {
-    "$date": "2025-08-26T14:00:12.720Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "68add854afa19ea79638ab4c"
-  },
-  "name": "jagriti mish",
-  "email": "j123@gmail.com",
-  "password": "$2b$10$mfZ7mQDGK1hLQgiK5UfRqOUVQEXi3oGvJgoiCONt8QeiWj3Cy7PmK",
-  "createdAt": {
-    "$date": "2025-08-26T15:52:52.079Z"
-  },
-  "updatedAt": {
-    "$date": "2025-08-26T15:52:52.079Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "68adf3cebf0c9df8d3623a1b"
-  },
-  "name": "Jagriti Mish",
-  "email": "jagriti@gmail.com",
-  "password": "$2b$10$5vo05xCtVpTnYSRRdsghHeyEc22efphCgY/PFlWPAu1LADj0KaBR6",
-  "createdAt": {
-    "$date": "2025-08-26T17:50:06.438Z"
-  },
-  "updatedAt": {
-    "$date": "2025-08-26T17:50:06.438Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "68ae0e35dc92136d0581e89d"
-  },
-  "name": "j m ",
-  "email": "j268@gmail.com",
-  "password": "$2b$10$pkYRB.uYcaSP6tTRhP1gVOeWTHrjwA7WuayN9mKbRDY2sQ3jgKWxK",
-  "createdAt": {
-    "$date": "2025-08-26T19:42:45.575Z"
-  },
-  "updatedAt": {
-    "$date": "2025-08-26T19:42:45.575Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "68ae1123770aa27c06603e9b"
-  },
-  "name": "Jag Mishra",
-  "email": "j2681995@gmail.com",
-  "password": "$2b$10$K7jbbbm8jSZ55XfxxTMgJe98ID.DEVeqZNhDXfQMoAtQUdIBezqSq",
-  "createdAt": {
-    "$date": "2025-08-26T19:55:15.577Z"
-  },
-  "updatedAt": {
-    "$date": "2025-08-26T19:55:15.577Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "68af13699ec7fd26658f3bd5"
-  },
-  "name": "Jagriti Mish",
-  "email": "jagriti26@gmail.com",
-  "password": "$2b$10$V7e4c1J/kRxaImZGw1wHDe7cPLQZZsewLn12SYSlIELUgqWmmhjt6",
-  "createdAt": {
-    "$date": "2025-08-27T14:17:13.772Z"
-  },
-  "updatedAt": {
-    "$date": "2025-08-27T14:17:13.772Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "68c13c0ad29e1bc61197c979"
-  },
-  "name": "JM",
-  "email": "jag123@gmail.com",
-  "password": "$2b$10$JO0bdPMr8wKhLGmG1yh5sOk05TCtwNWCOSHlg2jtJqZpI7.U9gzuy",
-  "createdAt": {
-    "$date": "2025-09-10T08:51:22.312Z"
-  },
-  "updatedAt": {
-    "$date": "2025-09-10T08:51:22.312Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "68c2716b79ec6a37897394b6"
-  },
-  "name": "jagritii Mishraa",
-  "email": "jagriti268@gmail.com",
-  "password": "$2b$10$BV8oArTIL.Zt4qke4aCTP.6Dm7afUJNlkdxFQF7iCcEqKIjrc4USe",
-  "createdAt": {
-    "$date": "2025-09-11T06:51:23.269Z"
-  },
-  "updatedAt": {
-    "$date": "2025-09-11T06:51:23.269Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "68c277ed79ec6a37897394f0"
-  },
-  "name": "jm26mishra",
-  "email": "j26@gmail.com",
-  "password": "$2b$10$zoawui/GhT4ddERJO8VOJexN5.QGos/8.j9YCLxXL5MxQCMOmCf.S",
-  "createdAt": {
-    "$date": "2025-09-11T07:19:09.316Z"
-  },
-  "updatedAt": {
-    "$date": "2025-09-11T07:19:09.316Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "68c2787179ec6a378973950d"
-  },
-  "name": "Jagriti Mishra",
-  "email": "Jag268@gmail.com",
-  "password": "$2b$10$lKk8kX83e7wnossgxDi8Lu87fvK5XUEnCGlTJTkRsPZgrTMApMY5e",
-  "createdAt": {
-    "$date": "2025-09-11T07:21:21.387Z"
-  },
-  "updatedAt": {
-    "$date": "2025-09-11T07:21:21.387Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "68c27db179ec6a378973957b"
-  },
-  "name": "Ja Mishraa",
-  "email": "268@gmail.com",
-  "password": "$2b$10$3j489m0oP9K5DyIL5ci89e.i6QgCyvufv675pUYyMjUPQ6Ve60TiW",
-  "createdAt": {
-    "$date": "2025-09-11T07:43:45.641Z"
-  },
-  "updatedAt": {
-    "$date": "2025-09-11T07:43:45.641Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "68c28ea579ec6a3789739643"
-  },
-  "name": "Jaag Mishraa",
-  "email": "jagg123@gmail.com",
-  "password": "$2b$10$aBbOn8G4sWI8W6P/Z/UufuKERE0Y/AV5YgqCdoMO4udMeekcfOVwW",
-  "createdAt": {
-    "$date": "2025-09-11T08:56:05.720Z"
-  },
-  "updatedAt": {
-    "$date": "2025-09-11T08:56:05.720Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "68c298e579ec6a3789739781"
-  },
-  "name": "jMish",
-  "email": "jagriti123@gamil.com",
-  "password": "$2b$10$eJebHSsSj4HvfdLHZgB8fOVdRn5lbFzq2xQWldTTZhZxlLuuUW.ny",
-  "createdAt": {
-    "$date": "2025-09-11T09:39:49.381Z"
-  },
-  "updatedAt": {
-    "$date": "2025-09-11T09:39:49.381Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "68c3d80c09a899ebecbd2845"
-  },
-  "name": "Jagritii",
-  "email": "Jagritim268@gmail.com",
-  "password": "$2b$10$X1bf8YD/ZjELtYLYpPb2u.OsC6iAkWolJ0I38IuXHpioXwILOns72",
-  "createdAt": {
-    "$date": "2025-09-12T08:21:32.996Z"
-  },
-  "updatedAt": {
-    "$date": "2025-09-12T08:21:32.996Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "68c53c474057bf99c21c9081"
-  },
-  "name": "jm268",
-  "email": "jagm@gmail.com",
-  "password": "$2b$10$QR6DjCjxrXA5zbgo6RqQxutcJYGZTlmzGHs58b6xX6COR9Nk8WCDq",
-  "createdAt": {
-    "$date": "2025-09-13T09:41:27.018Z"
-  },
-  "updatedAt": {
-    "$date": "2025-09-13T09:41:27.018Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "68c5412b4057bf99c21c90b7"
-  },
-  "name": "Jagmish",
-  "email": "j010@gmail.com",
-  "password": "$2b$10$Mpp7qMKONCqTGmwOge4lTuuFjTU69IqLmCqDF28lFOpciOA4nv8T2",
-  "createdAt": {
-    "$date": "2025-09-13T10:02:19.433Z"
-  },
-  "updatedAt": {
-    "$date": "2025-09-13T10:02:19.433Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "68c5483c4057bf99c21c90f8"
-  },
-  "name": "j268 mish",
-  "email": "ja26@gmail.com",
-  "password": "$2b$10$A1qPqDOaKLHSKAsvWjibOO9VBkH554Q0pgyfVwBZ/atbO8HC.58Ui",
-  "createdAt": {
-    "$date": "2025-09-13T10:32:28.422Z"
-  },
-  "updatedAt": {
-    "$date": "2025-09-13T10:32:28.422Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "68c54aba4057bf99c21c912d"
-  },
-  "name": "Jmishra",
-  "email": "jmish123@gmail.com",
-  "password": "$2b$10$C3iHlOd0US8NduUZdh.6juTsAYlkywRXv0E2E8wc0/lX759oZVOcG",
-  "createdAt": {
-    "$date": "2025-09-13T10:43:06.667Z"
-  },
-  "updatedAt": {
-    "$date": "2025-09-13T10:43:06.667Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "68c7bb4b4057bf99c21c92c7"
-  },
-  "name": "abc",
+  "name": "Abc ",
   "email": "abc@gmail.com",
-  "password": "$2b$10$Ed2UIXPStJBNjRyFwhCQgeabajKjLIeaKdWPJ88r0HBzLEh6Wq4Xm",
+  "password": "$2b$10$/xx.XhCCMw/2UFW1djSPUetO30pEunJRbpg2zV.V7mkbImm7R9zYC",
   "createdAt": {
-    "$date": "2025-09-15T07:07:55.598Z"
+    "$date": "2025-09-18T08:20:37.948Z"
   },
   "updatedAt": {
-    "$date": "2025-09-15T07:07:55.598Z"
+    "$date": "2025-09-18T08:20:37.948Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68cc3f086affd96657223071"
+  },
+  "name": "Jagriti Mishra",
+  "email": "jagriti@gmail.com",
+  "password": "$2b$10$CyCri/COJHWtWQlbIyZTKeX.awkm8Qb1K5r/5zSFjUBV8/F/lto9a",
+  "createdAt": {
+    "$date": "2025-09-18T17:19:04.359Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-18T17:19:04.359Z"
   },
   "__v": 0
 }]
