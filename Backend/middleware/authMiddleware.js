@@ -2,6 +2,7 @@
 import jwt from "jsonwebtoken";
 import User from "../models/User.js";
 
+// middleware/authMiddleware.js
 export const protect = async(req, res, next) => {
     let token;
     if (req.headers.authorization && req.headers.authorization.startsWith("Bearer")) {
@@ -9,15 +10,15 @@ export const protect = async(req, res, next) => {
     }
 
     if (!token) {
-        return res.status(401).json({ message: "Not authorized, no token , Please Signin " });
+        return res.status(401).json({ message: "Not authorized, no token, Please Signin " });
     }
 
     try {
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
-        req.user = await User.findById(decoded.id).select("-password");
+        req.user = await User.findById(decoded.userId).select("-password"); // ✅ fix here
         next();
     } catch (err) {
         console.error(err);
-        res.status(401).json({ message: "Not authorized, token failed , Please Signin" });
+        res.status(401).json({ message: "Not authorized, token failed, Please Signin" });
     }
 };

@@ -16,7 +16,9 @@ export default function VideoUploadModal({ onClose, channelHandle, onVideoUpload
   const [audience, setAudience] = useState(editingVideo ? editingVideo.audience : "notKids");
   const [loading, setLoading] = useState(false);
   const [category, setCategory] = useState(editingVideo ? editingVideo.category : "General");
-  const [uploader, setUploader] = useState(editingVideo ? editingVideo.uploader : channelName);
+  const [uploader, setUploader] = useState(
+    editingVideo ? editingVideo.uploader : channelName || ""
+  );
   useEffect(() => {
     if (editingVideo) {
       setTitle(editingVideo.title);
@@ -28,7 +30,7 @@ export default function VideoUploadModal({ onClose, channelHandle, onVideoUpload
       setCategory(editingVideo.category);
       setUploader(editingVideo.uploader);
     } else {
-      setUploader(channelName);
+      setUploader(channelName || "");
     }
   }, [editingVideo, channelName]);
 
@@ -37,7 +39,10 @@ export default function VideoUploadModal({ onClose, channelHandle, onVideoUpload
 
     if (!title) return toast.error("Title is required");
     if (!editingVideo && !videoFile) return toast.error("Please select a video file");
-
+    if (!channelHandle) {
+      toast.error("You must create a channel first!");
+      return;
+    }
     try {
       setLoading(true);
 
@@ -56,8 +61,8 @@ export default function VideoUploadModal({ onClose, channelHandle, onVideoUpload
 
       const method = editingVideo ? "put" : "post";
 
-
-      const token = localStorage.getItem("token");
+      const token = sessionStorage.getItem("token");
+      // const token = localStorage.getItem("token");
       const res = await axios({
         method,
         url,
@@ -131,7 +136,7 @@ export default function VideoUploadModal({ onClose, channelHandle, onVideoUpload
           </label>
           <label>
             Uploader
-            <input type="text" value={uploader} readOnly />
+            <input type="text" value={uploader + "(Optional)"} readOnly />
           </label>
           <label>
             Tags (comma separated)

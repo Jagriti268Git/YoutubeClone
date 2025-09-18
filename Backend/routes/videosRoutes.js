@@ -2,7 +2,7 @@ import express from "express";
 import multer from "multer";
 import { protect } from "../middleware/authMiddleware.js";
 
-import { createVideo, updateVideo, deleteVideo, getVideosByChannel, getAllVideos } from "../controllers/videosController.js";
+import { createVideo, updateVideo, deleteVideo, getVideosByChannel, getAllVideos, likeVideo, dislikeVideo } from "../controllers/videosController.js";
 
 const router = express.Router();
 
@@ -31,4 +31,6 @@ router.put("/:id", upload.fields([{ name: "videoFile", maxCount: 1 }, { name: "t
 router.delete("/:id", deleteVideo);
 router.get("/channel/:channelId", getVideosByChannel);
 router.get("/allVideos", getAllVideos);
+router.put("/like/:id", protect, likeVideo);
+router.put("/dislike/:id", protect, dislikeVideo);
 export default router;
