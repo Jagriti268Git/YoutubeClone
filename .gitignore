@@ -1,13 +1,33 @@
+# Ignore hidden IDE/OS files
+.lh/
+.ih/
+*.lh
+*.ih
 
-# Ignore system junk
-.DS_Store
+# Ignore uploads folder (if you don’t want to commit user-uploaded files)
+Backend/uploads/
 
-# Ignore Node.js stuff
-node_modules/
+# Logs
+logs
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-# Ignore build artifacts
-dist/
-build/
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

@@ -136,7 +136,7 @@ export default function VideoUploadModal({ onClose, channelHandle, onVideoUpload
           </label>
           <label>
             Uploader
-            <input type="text" value={uploader + "(Optional)"} readOnly />
+            <input type="text" value={uploader} readOnly />
           </label>
           <label>
             Tags (comma separated)
