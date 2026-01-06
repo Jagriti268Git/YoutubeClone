@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./Home";
 import VideoPlayer from "./components/VideoPlayer";
 import videosData from "./videosData";
-import "./app.css";
+import "./App.css";
 import SignIn from "./components/SignIn";
 import Channel from "./components/Channel";
 import axios from "axios";
