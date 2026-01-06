@@ -4,6 +4,7 @@ import "../signin.css";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
+
 export default function SignIn({ setUser }) {
   const [isSignUp, setIsSignUp] = useState(false);
   const [formData, setFormData] = useState({ name: "", email: "", password: "" });
