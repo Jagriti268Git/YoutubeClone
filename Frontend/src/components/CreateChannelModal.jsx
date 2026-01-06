@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../createchannelModal.css";
+import "../createchannelmodal.css";
 import { FaUserCircle } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
