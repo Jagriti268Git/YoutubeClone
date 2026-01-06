@@ -3,8 +3,8 @@ import { FaBars, FaSearch, FaMicrophone, FaUserCircle, FaBell } from "react-icon
 import { IoMdClose } from "react-icons/io";
 import { MdVideoCall } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
-import CreateChannelModal from "./CreateChannelModal";
-import VideoUploadModal from "./VideouploadModal";
+import CreateChannelModal from "./CreateChannelModal.jsx";
+import VideoUploadModal from "./VideoUploadModal.jsx";
 import "../header.css";
 import axios from 'axios'
 export default function Header({
