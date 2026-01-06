@@ -8,7 +8,7 @@ const generateToken = (id) => {
 
 // Register user
 export const registerUser = async(req, res) => {
-    console.log("➡️ Incoming Register Request:", req.body);
+    console.log(" Incoming Register Request:", req.body);
 
     const { name, email, password } = req.body;
     try {
@@ -72,7 +72,7 @@ export const verifyUser = (req, res) => {
         if (err) return res.status(403).json({ valid: false, message: "Invalid token" });
 
         try {
-            const user = await User.findById(decoded.userId).select("-password"); // ✅ fix here
+            const user = await User.findById(decoded.userId).select("-password");
             if (!user) return res.status(404).json({ valid: false, message: "User not found" });
 
             res.json({ valid: true, user });
