@@ -31,7 +31,6 @@ const channelSchema = new mongoose.Schema({
     },
 }, { timestamps: true });
 
-
 channelSchema.pre("validate", function(next) {
     if (this.handle && !this.handle.startsWith("@")) {
         this.handle = `@${this.handle}`;

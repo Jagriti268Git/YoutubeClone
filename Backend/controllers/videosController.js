@@ -64,7 +64,7 @@ export const getVideosByChannel = async(req, res) => {
     try {
         const { channelId } = req.params;
         const videos = await Video.find({ channel: channelId }).sort({ createdAt: -1 });
-        res.json(videos);
+        res.status(200).json(videos);
     } catch (err) {
         console.error(err);
         res.status(500).json({ message: "Failed to fetch videos" });
@@ -96,7 +96,7 @@ export const updateVideo = async(req, res) => {
         if (req.files.thumbnail) updateData.thumbnailUrl = `/uploads/thumbnails/${req.files.thumbnail[0].filename}`;
 
         const updatedVideo = await Video.findByIdAndUpdate(id, updateData, { new: true });
-        res.json(updatedVideo);
+        res.status(200).json(updatedVideo);
     } catch (err) {
         console.error(err);
         res.status(500).json({ message: "Failed to update video" });
@@ -122,7 +122,7 @@ export const likeVideo = async(req, res) => {
         }
 
         await video.save();
-        res.json(video);
+        res.status(200).json(video);
     } catch (err) {
         console.error(err);
         res.status(500).json({ message: "Failed to like video" });
